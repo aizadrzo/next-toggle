@@ -20,14 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Search,
-  TrendingUp,
-  Users,
-  Target,
-  Filter,
-} from "lucide-react";
+import { ArrowRight, Search, TrendingUp, Users, Filter } from "lucide-react";
 
 const caseStudies = [
   {

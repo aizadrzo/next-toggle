@@ -9,16 +9,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import {
-  Users,
-  Target,
-  Heart,
-  Lightbulb,
-  CheckCircle,
-  ArrowRight,
-} from "lucide-react";
+import { Users, Target, Heart, Lightbulb, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Toggle Solutions",

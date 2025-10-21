@@ -14,7 +14,6 @@ import {
   ArrowRight,
   Target,
   Users,
-  TrendingUp,
   BarChart3,
   Palette,
   Code,

@@ -16,14 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import {
-  Mail,
-  CheckCircle,
-  ArrowRight,
-  TrendingUp,
-  Users,
-  Target,
-} from "lucide-react";
+import { Mail, CheckCircle, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Email Marketing Services | Toggle Solutions",

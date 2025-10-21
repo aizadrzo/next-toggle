@@ -16,15 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import {
-  Target,
-  CheckCircle,
-  ArrowRight,
-  TrendingUp,
-  Users,
-  BarChart3,
-  Star,
-} from "lucide-react";
+import { Target, CheckCircle, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Performance Marketing Services | Toggle Solutions",

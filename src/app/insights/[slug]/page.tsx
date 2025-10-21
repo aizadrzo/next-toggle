@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-// Container replaced with standard Tailwind classes
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import {
@@ -16,7 +8,6 @@ import {
   Calendar,
   Clock,
   Share2,
-  BookOpen,
   User,
 } from "lucide-react";
 

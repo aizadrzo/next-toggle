@@ -24,6 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import Link from "next/link";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const contactSchema = z.object({
@@ -31,8 +32,8 @@ const contactSchema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().optional(),
   company: z.string().optional(),
-  serviceType: z.enum(
-    [
+  serviceType: z
+    .enum([
       "Performance Marketing",
       "Content Strategy & Marketing",
       "Branding",
@@ -40,17 +41,15 @@ const contactSchema = z.object({
       "Email Marketing",
       "Reporting & Analytics",
       "Other",
-    ],
-    {
-      required_error: "Please select a service type",
-    }
-  ),
-  projectSize: z.enum(
-    ["<RM5k", "RM5k-RM10k", "RM10k-RM20k", ">RM20k", "Not sure"],
-    {
-      required_error: "Please select a project size",
-    }
-  ),
+    ])
+    .refine((val) => val !== undefined, {
+      message: "Please select a service type",
+    }),
+  projectSize: z
+    .enum(["<RM5k", "RM5k-RM10k", "RM10k-RM20k", ">RM20k", "Not sure"])
+    .refine((val) => val !== undefined, {
+      message: "Please select a project size",
+    }),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -65,7 +64,6 @@ export default function ContactPage() {
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
@@ -128,10 +126,10 @@ export default function ContactPage() {
               </p>
               <div className="flex gap-4 justify-center">
                 <Button asChild>
-                  <a href="/">Back to homepage</a>
+                  <Link href="/">Back to homepage</Link>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="/insights">Read our insights</a>
+                  <Link href="/insights">Read our insights</Link>
                 </Button>
               </div>
             </div>

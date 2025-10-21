@@ -16,14 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import {
-  Code,
-  CheckCircle,
-  ArrowRight,
-  TrendingUp,
-  Smartphone,
-  Zap,
-} from "lucide-react";
+import { Code, CheckCircle, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Web Development Services | Toggle Solutions",
