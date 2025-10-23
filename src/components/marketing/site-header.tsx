@@ -66,7 +66,7 @@ export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-[#2F2F2F] bg-black/80 backdrop-blur-sm supports-[backdrop-filter]:bg-black/60">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav
           className="flex h-16 items-center justify-between"
@@ -80,7 +80,7 @@ export function SiteHeader() {
               className="-m-1.5 p-1.5"
               aria-label="Toggle Solutions homepage"
             >
-              <span className="text-2xl font-bold text-primary">Toggle</span>
+              <span className="text-2xl font-bold text-white">Toggle</span>
             </Link>
           </div>
 
@@ -120,7 +120,7 @@ export function SiteHeader() {
                     <NavigationMenuLink asChild>
                       <Link
                         href={item.href}
-                        className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                        className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-[#1A1A1A] hover:text-white focus:bg-[#1A1A1A] focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-[#A0A0A0]"
                       >
                         {item.name}
                       </Link>
@@ -157,7 +157,7 @@ export function SiteHeader() {
                   <SheetTitle className="text-left">
                     <Link
                       href="/"
-                      className="text-2xl font-bold text-primary"
+                      className="text-2xl font-bold text-white"
                       aria-label="Toggle Solutions homepage"
                     >
                       Toggle

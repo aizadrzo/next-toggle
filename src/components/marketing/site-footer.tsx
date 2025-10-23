@@ -31,7 +31,7 @@ const footerLinks = {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-muted/50" role="contentinfo">
+    <footer className="bg-[#0A0A0A]" role="contentinfo">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="py-16">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
@@ -39,36 +39,36 @@ export function SiteFooter() {
             <div className="lg:col-span-2">
               <Link
                 href="/"
-                className="text-2xl font-bold text-primary"
+                className="text-2xl font-bold text-white"
                 aria-label="Toggle Solutions homepage"
               >
                 Toggle
               </Link>
-              <p className="mt-4 text-sm text-muted-foreground">
+              <p className="mt-4 text-sm text-[#6B6B6B]">
                 People-first digital marketing agency helping SMEs and startups
                 grow through smart strategy, data-driven campaigns, and creative
                 execution.
               </p>
               <div className="mt-6 space-y-3">
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="flex items-center gap-3 text-sm text-[#6B6B6B]">
                   <Mail className="h-4 w-4" aria-hidden="true" />
                   <a
                     href="mailto:hello@togglesolutions.com"
-                    className="hover:text-foreground focus:text-foreground focus:outline-none"
+                    className="hover:text-white focus:text-white focus:outline-none"
                   >
                     hello@togglesolutions.com
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="flex items-center gap-3 text-sm text-[#6B6B6B]">
                   <Phone className="h-4 w-4" aria-hidden="true" />
                   <a
                     href="tel:+60123456789"
-                    className="hover:text-foreground focus:text-foreground focus:outline-none"
+                    className="hover:text-white focus:text-white focus:outline-none"
                   >
                     +60 12-345 6789
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="flex items-center gap-3 text-sm text-[#6B6B6B]">
                   <MapPin className="h-4 w-4" aria-hidden="true" />
                   <span>Kuala Lumpur, Malaysia</span>
                 </div>
@@ -77,15 +77,13 @@ export function SiteFooter() {
 
             {/* Company Links */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">
-                Company
-              </h3>
+              <h3 className="text-sm font-semibold text-white mb-4">Company</h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground focus:text-foreground focus:outline-none"
+                      className="text-sm text-[#6B6B6B] hover:text-white focus:text-white focus:outline-none"
                     >
                       {link.name}
                     </Link>
@@ -96,7 +94,7 @@ export function SiteFooter() {
 
             {/* Services Links */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">
+              <h3 className="text-sm font-semibold text-white mb-4">
                 Services
               </h3>
               <ul className="space-y-3">
@@ -104,7 +102,7 @@ export function SiteFooter() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground focus:text-foreground focus:outline-none"
+                      className="text-sm text-[#6B6B6B] hover:text-white focus:text-white focus:outline-none"
                     >
                       {link.name}
                     </Link>
@@ -115,7 +113,7 @@ export function SiteFooter() {
 
             {/* Resources Links */}
             <div>
-              <h3 className="text-sm font-semibold text-foreground mb-4">
+              <h3 className="text-sm font-semibold text-white mb-4">
                 Resources
               </h3>
               <ul className="space-y-3">
@@ -123,7 +121,7 @@ export function SiteFooter() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground focus:text-foreground focus:outline-none"
+                      className="text-sm text-[#6B6B6B] hover:text-white focus:text-white focus:outline-none"
                     >
                       {link.name}
                     </Link>
@@ -137,7 +135,7 @@ export function SiteFooter() {
 
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-[#6B6B6B]">
                 © 2024 Toggle Solutions. All rights reserved.
               </p>
               <div className="flex gap-6">
@@ -145,7 +143,7 @@ export function SiteFooter() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground focus:text-foreground focus:outline-none"
+                    className="text-sm text-[#6B6B6B] hover:text-white focus:text-white focus:outline-none"
                   >
                     {link.name}
                   </Link>
