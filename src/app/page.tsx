@@ -158,7 +158,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-24 sm:py-32">
+      <section className="hero-section relative py-24 sm:py-32">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <Badge variant="secondary" className="mb-8">
@@ -185,7 +185,7 @@ export default function HomePage() {
       </section>
 
       {/* Problems Section */}
-      <section className="py-24 bg-muted/50">
+      <section className="section-alt py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -241,7 +241,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-muted/50">
+      <section className="section-alt py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -331,7 +331,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-muted/50">
+      <section className="section-alt py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -376,23 +376,25 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="section-alt py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Ready to grow your business?
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Let's talk about how we can help you achieve your marketing goals.
-              Book a free discovery call and see what's possible.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg">
-                <Link href="/contact">Book a discovery call</Link>
-              </Button>
-              <Button variant="outline" asChild size="lg">
-                <Link href="/about">Learn more about us</Link>
-              </Button>
+          <div className="cta-section mx-auto max-w-4xl text-center p-16">
+            <div className="relative z-10">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Ready to grow your business?
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                Let's talk about how we can help you achieve your marketing
+                goals. Book a free discovery call and see what's possible.
+              </p>
+              <div className="mt-10 flex items-center justify-center gap-x-6">
+                <Button asChild size="lg">
+                  <Link href="/contact">Book a discovery call</Link>
+                </Button>
+                <Button variant="outline" asChild size="lg">
+                  <Link href="/about">Learn more about us</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

@@ -162,7 +162,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-24">
+        <section className="section-alt py-24">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
               <div className="grid gap-12 lg:grid-cols-2">
