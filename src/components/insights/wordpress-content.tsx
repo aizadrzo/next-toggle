@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-
 interface WordPressContentProps {
   content: string;
   className?: string;
@@ -14,9 +12,6 @@ export function WordPressContent({
   className,
 }: WordPressContentProps) {
   return (
-    <div
-      className={cn("className", className)}
-      dangerouslySetInnerHTML={{ __html: content }}
-    />
+    <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
   );
 }
