@@ -14,6 +14,9 @@ export function WordPressContent({
   className,
 }: WordPressContentProps) {
   return (
-    <div className="className" dangerouslySetInnerHTML={{ __html: content }} />
+    <div
+      className={cn("className", className)}
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
   );
 }
