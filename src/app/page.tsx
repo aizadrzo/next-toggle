@@ -13,7 +13,6 @@ import {
   ArrowRight,
   Target,
   Users,
-  TrendingUp,
   BarChart3,
   Palette,
   Code,
@@ -22,137 +21,7 @@ import {
   Star,
   Quote,
 } from "lucide-react";
-
-const services = [
-  {
-    name: "Performance Marketing",
-    description:
-      "Google, Meta, TikTok ads that actually convert. We optimize for results, not vanity metrics.",
-    icon: Target,
-    href: "/services/performance-marketing",
-  },
-  {
-    name: "Content Strategy & Marketing",
-    description:
-      "Strategic content that builds trust and drives action. No fluff, just results.",
-    icon: Users,
-    href: "/services/content-marketing",
-  },
-  {
-    name: "Branding",
-    description:
-      "Visual identity that resonates with your audience and sets you apart.",
-    icon: Palette,
-    href: "/services/branding",
-  },
-  {
-    name: "Web Development",
-    description:
-      "Fast, beautiful websites that convert visitors into customers.",
-    icon: Code,
-    href: "/services/web-development",
-  },
-  {
-    name: "Email Marketing",
-    description: "Email campaigns that people actually read and act on.",
-    icon: Mail,
-    href: "/services/email-marketing",
-  },
-  {
-    name: "Reporting & Analytics",
-    description:
-      "Clear insights on what's working so you can make smart decisions.",
-    icon: BarChart3,
-    href: "/services/analytics-reporting",
-  },
-];
-
-const problems = [
-  {
-    title: "Your marketing feels scattered",
-    description:
-      "You're trying everything but nothing seems to stick. Social media, ads, content—it's all over the place.",
-  },
-  {
-    title: "You're not seeing real results",
-    description:
-      "Likes and followers are nice, but they don't pay the bills. You need actual customers and sales.",
-  },
-  {
-    title: "You don't know what's working",
-    description:
-      "You're flying blind. No clear data on what's driving results or where to invest your budget.",
-  },
-];
-
-const solutions = [
-  {
-    title: "We create focused strategies",
-    description:
-      "No more throwing spaghetti at the wall. We build clear, focused marketing strategies that work.",
-  },
-  {
-    title: "We drive measurable growth",
-    description:
-      "Every campaign is designed to generate leads, sales, and real business impact.",
-  },
-  {
-    title: "We give you crystal-clear insights",
-    description:
-      "You'll know exactly what's working, what isn't, and where to invest next.",
-  },
-];
-
-const results = [
-  {
-    client: "Tech Startup",
-    industry: "SaaS",
-    challenge: "Low conversion rates",
-    outcome: "300% increase in trial signups",
-    metric: "300%",
-    description: "increase in trial signups",
-  },
-  {
-    client: "E-commerce Brand",
-    industry: "Retail",
-    challenge: "Poor ad performance",
-    outcome: "250% ROI improvement",
-    metric: "250%",
-    description: "ROI improvement",
-  },
-  {
-    client: "Service Business",
-    industry: "Professional Services",
-    challenge: "Low brand awareness",
-    outcome: "500% more qualified leads",
-    metric: "500%",
-    description: "more qualified leads",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Toggle didn't just improve our marketing—they transformed our entire business. We went from struggling to get leads to turning them away.",
-    author: "Sarah Chen",
-    role: "Founder",
-    company: "TechFlow",
-  },
-  {
-    quote:
-      "Finally, a marketing agency that actually understands our business. They delivered results that exceeded our expectations.",
-    author: "Marcus Rodriguez",
-    role: "CEO",
-    company: "GrowthCo",
-  },
-  {
-    quote:
-      "Working with Toggle was like having a marketing team that actually cares about our success. Highly recommend.",
-    author: "Lisa Park",
-    role: "Marketing Director",
-    company: "InnovateLab",
-  },
-];
+import { services, testimonials } from "./data";
 
 export default function HomePage() {
   return (
@@ -165,77 +34,79 @@ export default function HomePage() {
               People-first digital marketing
             </Badge>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Marketing that actually{" "}
-              <span className="text-primary">moves the needle</span>
+              The Authority in Digital Growth. Data-Powered.{" "}
+              <span className="text-primary">Results-Obsessed</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              We help SMEs and startups grow through smart strategy, data-driven
-              campaigns, and creative execution. No fluff, just results.
+              We provide the map to your growth. Smart strategy, real-world
+              data, and original creative ideas deliver results you can actually
+              feel. Simple plan. Massive impact.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button asChild size="lg">
                 <Link href="/contact">Book a discovery call</Link>
-              </Button>
-              <Button variant="outline" asChild size="lg">
-                <Link href="/work">See our work</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Problems Section */}
+      {/* Growth Goals Section */}
       <section className="section-alt py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Sound familiar?
+              Your Next-Level Growth Goals
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              These are the challenges we help businesses solve every day
+              Every ambitious business is aiming for these outcomes. We provide
+              the strategy to get you there.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
-            {problems.map((problem, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <CardTitle className="text-xl">{problem.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    {problem.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions Section */}
-      <section className="py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Here's how we fix it
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Our approach is simple: focus on what works, measure everything,
-              and iterate fast
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {solutions.map((solution, index) => (
-              <div key={index} className="text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-6">
-                  <CheckCircle className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  {solution.title}
-                </h3>
-                <p className="text-muted-foreground">{solution.description}</p>
+            <div className="text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-6">
+                <CheckCircle className="h-6 w-6 text-primary" />
               </div>
-            ))}
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                1. Achieve Unified Marketing Momentum
+              </h3>
+              <p className="text-muted-foreground">
+                Stop running in circles. Imagine all your marketing (social,
+                ads, and content) working together as a single, powerful system.
+                We'll give you the <strong>simple, unified plan</strong> that
+                makes every dollar contribute to the overall goal.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-6">
+                <CheckCircle className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                2. Convert Effort into Guaranteed Revenue
+              </h3>
+              <p className="text-muted-foreground">
+                Move beyond 'nice-to-have' metrics like likes and followers.
+                It's time for marketing that actually pays the bills. We focus
+                on strategies that deliver{" "}
+                <strong>measurable customers and reliable revenue</strong> you
+                can count on.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-6">
+                <CheckCircle className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                3. Future-Proof Your Sustained Success
+              </h3>
+              <p className="text-muted-foreground">
+                Don't let today's success be tomorrow's bottleneck. We help you
+                build a <strong>consistent, scalable marketing engine</strong>{" "}
+                that works across multiple markets and keeps your growth smooth,
+                no matter how big you get.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -282,49 +153,6 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Button asChild size="lg">
               <Link href="/services">View all services</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section className="py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Real results for real businesses
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Here's what happens when you work with a team that actually cares
-              about your success
-            </p>
-          </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {results.map((result, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
-                    <TrendingUp className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-primary">
-                    {result.metric}
-                  </CardTitle>
-                  <CardDescription className="text-lg">
-                    {result.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    <strong>{result.client}</strong> • {result.industry}
-                  </p>
-                  <p className="text-sm">{result.challenge}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button variant="outline" asChild size="lg">
-              <Link href="/work">See more case studies</Link>
             </Button>
           </div>
         </div>
@@ -390,9 +218,6 @@ export default function HomePage() {
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Button asChild size="lg">
                   <Link href="/contact">Book a discovery call</Link>
-                </Button>
-                <Button variant="outline" asChild size="lg">
-                  <Link href="/about">Learn more about us</Link>
                 </Button>
               </div>
             </div>
