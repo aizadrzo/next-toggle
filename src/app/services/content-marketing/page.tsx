@@ -18,6 +18,10 @@ import {
 import Link from "next/link";
 import { Users, CheckCircle, TrendingUp } from "lucide-react";
 import { deliverables, process, useCases, faqs } from "./data";
+import { CustomHero } from "@/components/marketing/custom-hero";
+import { AnimatedSection, transitionVariants } from "@/components/marketing/animated-section";
+import { AnimatedGroup } from "@/components/ui/animated-group";
+import { TextEffect } from "@/components/ui/text-effect";
 
 export const metadata: Metadata = {
   title: "Content Marketing Services | Toggle Solutions",
@@ -49,42 +53,34 @@ export default function ContentMarketingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-24 sm:py-32">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <Badge variant="secondary" className="mb-8">
-              Content Strategy & Marketing
-            </Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Content that builds{" "}
-              <span className="text-primary">trust and drives action</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              We create strategic content that educates your audience, builds
-              trust, and drives meaningful business results. No fluff, just
-              content that works.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg">
-                <Link href="/contact">Get started</Link>
-              </Button>
-              <Button variant="outline" asChild size="lg">
-                <Link href="/work">See case studies</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CustomHero
+        badge="Content Strategy & Marketing"
+        title="Content that builds"
+        titleHighlight="trust and drives action"
+        description="We create strategic content that educates your audience, builds trust, and drives meaningful business results. No fluff, just content that works."
+        primaryCTA={{
+          text: "Get started",
+          href: "/contact",
+        }}
+        secondaryCTA={{
+          text: "See case studies",
+          href: "/work",
+        }}
+      />
 
       {/* Overview Section */}
       <section className="py-24 bg-muted/50">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <div className="grid gap-12 lg:grid-cols-2 items-center">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight text-foreground mb-6">
+              <AnimatedGroup variants={transitionVariants}>
+                <TextEffect
+                  preset="fade-in-blur"
+                  speedSegment={0.3}
+                  as="h2"
+                  className="text-3xl font-bold tracking-tight text-foreground mb-6">
                   What is content marketing?
-                </h2>
+                </TextEffect>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     Content marketing is about creating valuable, relevant
@@ -103,11 +99,13 @@ export default function ContentMarketingPage() {
                     content's impact.
                   </p>
                 </div>
-              </div>
+              </AnimatedGroup>
               <div className="relative">
-                <div className="aspect-square rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <Users className="h-24 w-24 text-primary" />
-                </div>
+                <AnimatedGroup variants={transitionVariants}>
+                  <div className="aspect-square rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <Users className="h-24 w-24 text-primary" />
+                  </div>
+                </AnimatedGroup>
               </div>
             </div>
           </div>
@@ -125,18 +123,20 @@ export default function ContentMarketingPage() {
               Everything you need to run successful content marketing campaigns
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {deliverables.map((deliverable, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <div className="flex items-center justify-center mb-4">
-                    <CheckCircle className="h-8 w-8 text-primary" />
-                  </div>
-                  <p className="font-medium text-foreground">{deliverable}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <AnimatedSection>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {deliverables.map((deliverable, index) => (
+                <Card key={index} className="text-center">
+                  <CardContent className="pt-6">
+                    <div className="flex items-center justify-center mb-4">
+                      <CheckCircle className="h-8 w-8 text-primary" />
+                    </div>
+                    <p className="font-medium text-foreground">{deliverable}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -152,23 +152,25 @@ export default function ContentMarketingPage() {
             </p>
           </div>
           <div className="mx-auto max-w-4xl">
-            <div className="space-y-8">
-              {process.map((item, index) => (
-                <div key={index} className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">
-                      {item.step}
+            <AnimatedSection>
+              <div className="space-y-8">
+                {process.map((item, index) => (
+                  <div key={index} className="flex gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">
+                        {item.step}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -185,40 +187,42 @@ export default function ContentMarketingPage() {
               grow
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {useCases.map((useCase, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <TrendingUp className="h-5 w-5 text-primary" />
-                    <Badge variant="outline">{useCase.industry}</Badge>
-                  </div>
-                  <CardTitle className="text-lg">Challenge</CardTitle>
-                  <CardDescription>{useCase.challenge}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        Solution
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {useCase.solution}
-                      </p>
+          <AnimatedSection>
+            <div className="grid gap-8 md:grid-cols-3">
+              {useCases.map((useCase, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <div className="flex items-center gap-2 mb-2">
+                      <TrendingUp className="h-5 w-5 text-primary" />
+                      <Badge variant="outline">{useCase.industry}</Badge>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">
-                        Result
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {useCase.result}
-                      </p>
+                    <CardTitle className="text-lg">Challenge</CardTitle>
+                    <CardDescription>{useCase.challenge}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">
+                          Solution
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {useCase.solution}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">
+                          Result
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {useCase.result}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

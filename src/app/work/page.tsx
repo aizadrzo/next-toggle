@@ -21,6 +21,8 @@ import {
 } from "@/components/ui/select";
 import Link from "next/link";
 import { ArrowRight, Search, TrendingUp, Users, Filter } from "lucide-react";
+import { caseStudies as featuredCaseStudies } from "@/data/company";
+import { CaseTiles } from "@/components/marketing/case-tiles";
 
 const caseStudies = [
   {
@@ -174,6 +176,19 @@ export default function WorkPage() {
               strategy, data-driven campaigns, and creative execution.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Case Studies from Catalog */}
+      <section className="py-16">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-10">
+            <h2 className="text-2xl font-semibold">Featured case studies</h2>
+            <p className="mt-3 text-muted-foreground">
+              Highlights from our recent work
+            </p>
+          </div>
+          <CaseTiles items={featuredCaseStudies} />
         </div>
       </section>
 

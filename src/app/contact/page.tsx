@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-// Container replaced with standard Tailwind classes
 import {
   Card,
   CardContent,
@@ -164,290 +163,263 @@ export default function ContactPage() {
         {/* Contact Form Section */}
         <section className="section-alt py-24">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-4xl">
-              <div className="grid gap-12 lg:grid-cols-2">
-                {/* Contact Form */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Send us a message</CardTitle>
-                    <CardDescription>
-                      Fill out the form below and we'll get back to you within
-                      24 hours.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <form
-                      onSubmit={handleSubmit(onSubmit)}
-                      className="space-y-6"
-                    >
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Name *</Label>
-                          <Input
-                            id="name"
-                            {...register("name")}
-                            placeholder="Your full name"
-                            aria-invalid={errors.name ? "true" : "false"}
-                            aria-describedby={
-                              errors.name ? "name-error" : undefined
-                            }
-                          />
-                          {errors.name && (
-                            <p
-                              id="name-error"
-                              className="text-sm text-destructive"
-                              role="alert"
-                            >
-                              {errors.name.message}
-                            </p>
-                          )}
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email *</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            {...register("email")}
-                            placeholder="your@email.com"
-                            aria-invalid={errors.email ? "true" : "false"}
-                            aria-describedby={
-                              errors.email ? "email-error" : undefined
-                            }
-                          />
-                          {errors.email && (
-                            <p
-                              id="email-error"
-                              className="text-sm text-destructive"
-                              role="alert"
-                            >
-                              {errors.email.message}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">Phone</Label>
-                          <Input
-                            id="phone"
-                            {...register("phone")}
-                            placeholder="+60 12-345 6789"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="company">Company</Label>
-                          <Input
-                            id="company"
-                            {...register("company")}
-                            placeholder="Your company name"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="serviceType">Service Type *</Label>
-                          <Select
-                            onValueChange={(value) =>
-                              setValue("serviceType", value as any)
-                            }
-                            aria-label="Select a service type"
-                          >
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a service" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="Performance Marketing">
-                                Performance Marketing
-                              </SelectItem>
-                              <SelectItem value="Content Strategy & Marketing">
-                                Content Strategy & Marketing
-                              </SelectItem>
-                              <SelectItem value="Branding">Branding</SelectItem>
-                              <SelectItem value="Web Development">
-                                Web Development
-                              </SelectItem>
-                              <SelectItem value="Email Marketing">
-                                Email Marketing
-                              </SelectItem>
-                              <SelectItem value="Reporting & Analytics">
-                                Reporting & Analytics
-                              </SelectItem>
-                              <SelectItem value="Other">Other</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          {errors.serviceType && (
-                            <p className="text-sm text-destructive">
-                              {errors.serviceType.message}
-                            </p>
-                          )}
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="projectSize">Project Size *</Label>
-                          <Select
-                            onValueChange={(value) =>
-                              setValue("projectSize", value as any)
-                            }
-                            aria-label="Select project size"
-                          >
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select project size" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="<RM5k">
-                                Less than RM 5,000
-                              </SelectItem>
-                              <SelectItem value="RM5k-RM10k">
-                                RM 5,000 - RM 10,000
-                              </SelectItem>
-                              <SelectItem value="RM10k-RM20k">
-                                RM 10,000 - RM 20,000
-                              </SelectItem>
-                              <SelectItem value=">RM20k">
-                                More than RM 20,000
-                              </SelectItem>
-                              <SelectItem value="Not sure">Not sure</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          {errors.projectSize && (
-                            <p className="text-sm text-destructive">
-                              {errors.projectSize.message}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
+            <div className="grid gap-12 lg:grid-cols-2">
+              {/* Contact Form */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Send us a message</CardTitle>
+                  <CardDescription>
+                    Fill out the form below and we'll get back to you within 24
+                    hours.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                    <div className="grid gap-4 md:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="message">Message *</Label>
-                        <Textarea
-                          id="message"
-                          {...register("message")}
-                          placeholder="Tell us about your project, goals, or any questions you have..."
-                          rows={6}
+                        <Label htmlFor="name">Name *</Label>
+                        <Input
+                          id="name"
+                          {...register("name")}
+                          placeholder="Your full name"
+                          aria-invalid={errors.name ? "true" : "false"}
+                          aria-describedby={
+                            errors.name ? "name-error" : undefined
+                          }
                         />
-                        {errors.message && (
-                          <p className="text-sm text-destructive">
-                            {errors.message.message}
+                        {errors.name && (
+                          <p
+                            id="name-error"
+                            className="text-sm text-destructive"
+                            role="alert"
+                          >
+                            {errors.name.message}
                           </p>
                         )}
                       </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email *</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          {...register("email")}
+                          placeholder="your@email.com"
+                          aria-invalid={errors.email ? "true" : "false"}
+                          aria-describedby={
+                            errors.email ? "email-error" : undefined
+                          }
+                        />
+                        {errors.email && (
+                          <p
+                            id="email-error"
+                            className="text-sm text-destructive"
+                            role="alert"
+                          >
+                            {errors.email.message}
+                          </p>
+                        )}
+                      </div>
+                    </div>
 
-                      <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? "Sending..." : "Send message"}
-                      </Button>
-                    </form>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">Phone</Label>
+                        <Input
+                          id="phone"
+                          {...register("phone")}
+                          placeholder="+60 12-345 6789"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="company">Company</Label>
+                        <Input
+                          id="company"
+                          {...register("company")}
+                          placeholder="Your company name"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="space-y-2">
+                        <Label htmlFor="serviceType">Service Type *</Label>
+                        <Select
+                          onValueChange={(value) =>
+                            setValue("serviceType", value as any)
+                          }
+                          aria-label="Select a service type"
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a service" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="Performance Marketing">
+                              Performance Marketing
+                            </SelectItem>
+                            <SelectItem value="Content Strategy & Marketing">
+                              Content Strategy & Marketing
+                            </SelectItem>
+                            <SelectItem value="Branding">Branding</SelectItem>
+                            <SelectItem value="Web Development">
+                              Web Development
+                            </SelectItem>
+                            <SelectItem value="Email Marketing">
+                              Email Marketing
+                            </SelectItem>
+                            <SelectItem value="Reporting & Analytics">
+                              Reporting & Analytics
+                            </SelectItem>
+                            <SelectItem value="Other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        {errors.serviceType && (
+                          <p className="text-sm text-destructive">
+                            {errors.serviceType.message}
+                          </p>
+                        )}
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="projectSize">Project Size *</Label>
+                        <Select
+                          onValueChange={(value) =>
+                            setValue("projectSize", value as any)
+                          }
+                          aria-label="Select project size"
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select project size" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="<RM5k">
+                              Less than RM 5,000
+                            </SelectItem>
+                            <SelectItem value="RM5k-RM10k">
+                              RM 5,000 - RM 10,000
+                            </SelectItem>
+                            <SelectItem value="RM10k-RM20k">
+                              RM 10,000 - RM 20,000
+                            </SelectItem>
+                            <SelectItem value=">RM20k">
+                              More than RM 20,000
+                            </SelectItem>
+                            <SelectItem value="Not sure">Not sure</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        {errors.projectSize && (
+                          <p className="text-sm text-destructive">
+                            {errors.projectSize.message}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        {...register("message")}
+                        placeholder="Tell us about your project, goals, or any questions you have..."
+                        rows={6}
+                      />
+                      {errors.message && (
+                        <p className="text-sm text-destructive">
+                          {errors.message.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Send message"}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Get in touch</CardTitle>
+                    <CardDescription>
+                      Prefer to reach out directly? Here's how you can contact
+                      us.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                        <Mail className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Email us</p>
+                        <p className="text-sm text-muted-foreground">
+                          hello@toggle.solutions
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                        <MapPin className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Based in</p>
+                        <p className="text-sm text-muted-foreground">
+                          Kuala Lumpur, Malaysia
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
 
-                {/* Contact Information */}
-                <div className="space-y-8">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Get in touch</CardTitle>
-                      <CardDescription>
-                        Prefer to reach out directly? Here's how you can contact
-                        us.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                          <Mail className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Email us</p>
-                          <p className="text-sm text-muted-foreground">
-                            hello@togglesolutions.com
-                          </p>
-                        </div>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Why work with us?</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 mt-0.5">
+                        <div className="h-2 w-2 rounded-full bg-primary" />
                       </div>
-                      <div className="flex items-center gap-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                          <Phone className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Call us</p>
-                          <p className="text-sm text-muted-foreground">
-                            +60 12-345 6789
-                          </p>
-                        </div>
+                      <div>
+                        <p className="font-medium text-sm">
+                          People-first approach
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          We care about your success, not just our metrics
+                        </p>
                       </div>
-                      <div className="flex items-center gap-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                          <MapPin className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Visit us</p>
-                          <p className="text-sm text-muted-foreground">
-                            Kuala Lumpur, Malaysia
-                          </p>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 mt-0.5">
+                        <div className="h-2 w-2 rounded-full bg-primary" />
                       </div>
-                      <div className="flex items-center gap-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                          <Clock className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium">Business hours</p>
-                          <p className="text-sm text-muted-foreground">
-                            Mon-Fri, 9AM-6PM (MYT)
-                          </p>
-                        </div>
+                      <div>
+                        <p className="font-medium text-sm">Proven results</p>
+                        <p className="text-xs text-muted-foreground">
+                          Track record of helping businesses grow
+                        </p>
                       </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Why work with us?</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 mt-0.5">
-                          <div className="h-2 w-2 rounded-full bg-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium text-sm">
-                            People-first approach
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            We care about your success, not just our metrics
-                          </p>
-                        </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 mt-0.5">
+                        <div className="h-2 w-2 rounded-full bg-primary" />
                       </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 mt-0.5">
-                          <div className="h-2 w-2 rounded-full bg-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium text-sm">Proven results</p>
-                          <p className="text-xs text-muted-foreground">
-                            Track record of helping businesses grow
-                          </p>
-                        </div>
+                      <div>
+                        <p className="font-medium text-sm">
+                          Transparent communication
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          Regular updates and clear reporting
+                        </p>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 mt-0.5">
-                          <div className="h-2 w-2 rounded-full bg-primary" />
-                        </div>
-                        <div>
-                          <p className="font-medium text-sm">
-                            Transparent communication
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            Regular updates and clear reporting
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
