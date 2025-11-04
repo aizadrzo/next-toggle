@@ -4,52 +4,30 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Target,
-  Users,
-  BarChart3,
-  Palette,
-  Code,
-  Mail,
-  CheckCircle,
-  Star,
-  Quote,
-} from "lucide-react";
+import { ArrowRight, CheckCircle, Star, Quote } from "lucide-react";
 import { services, testimonials } from "./data";
+import { CustomHero } from "@/components/marketing/custom-hero";
+import { AnimatedSection } from "@/components/marketing/animated-section";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="hero-section relative py-24 sm:py-32">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <Badge variant="secondary" className="mb-8">
-              People-first digital marketing
-            </Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              The Authority in Digital Growth. Data-Powered.{" "}
-              <span className="text-primary">Results-Obsessed</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              We provide the map to your growth. Smart strategy, real-world
-              data, and original creative ideas deliver results you can actually
-              feel. Simple plan. Massive impact.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg">
-                <Link href="/contact">Book a discovery call</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CustomHero
+        badge="People-first digital marketing"
+        title="The Authority in Digital Growth Data-Powered"
+        titleHighlight="Results-Obsessed."
+        description="We provide the map to your growth. Smart strategy, real-world data, and original creative ideas deliver results you can actually feel. Simple plan. Massive impact."
+        primaryCTA={{
+          text: "Book a discovery call",
+          href: "/contact",
+        }}
+      />
 
       {/* Growth Goals Section */}
       <section className="section-alt py-24">
@@ -123,33 +101,35 @@ export default function HomePage() {
               expertise and care
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <Card
-                key={service.name}
-                className="group hover:shadow-lg transition-shadow"
-              >
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <service.icon className="h-6 w-6 text-primary" />
+          <AnimatedSection>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => (
+                <Card
+                  key={service.name}
+                  className="group hover:shadow-lg transition-shadow"
+                >
+                  <CardHeader>
+                    <service.icon className="h-8 w-8 text-primary mb-4" />
                     <CardTitle className="text-lg">{service.name}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-4">
-                    {service.description}
-                  </CardDescription>
-                  <Link
-                    href={service.href}
-                    className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 group-hover:gap-2 transition-all"
-                  >
-                    Learn more
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="mb-4">
+                      {service.description}
+                    </CardDescription>
+                  </CardContent>
+                  <CardFooter>
+                    <Link
+                      href={service.href}
+                      className="inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 group-hover:gap-2 transition-all"
+                    >
+                      Learn more
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </AnimatedSection>
           <div className="text-center mt-12">
             <Button asChild size="lg">
               <Link href="/services">View all services</Link>
@@ -170,36 +150,38 @@ export default function HomePage() {
               helped grow
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <Quote className="h-8 w-8 text-primary mx-auto mb-4" />
-                  <blockquote className="text-lg text-foreground mb-6">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="flex items-center justify-center gap-2">
-                    <div className="flex -space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
+          <AnimatedSection>
+            <div className="grid gap-8 md:grid-cols-3">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="text-center">
+                  <CardContent className="pt-6">
+                    <Quote className="h-8 w-8 text-primary mx-auto mb-4" />
+                    <blockquote className="text-lg text-foreground mb-6">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="flex items-center justify-center gap-2">
+                      <div className="flex -space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                          />
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="mt-4">
-                    <p className="font-semibold text-foreground">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.role}, {testimonial.company}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <div className="mt-4">
+                      <p className="font-semibold text-foreground">
+                        {testimonial.author}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}, {testimonial.company}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

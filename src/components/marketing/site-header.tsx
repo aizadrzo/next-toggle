@@ -19,13 +19,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 
 const navigation = [
   { name: "Services", href: "/services" },
   { name: "Work", href: "/work" },
   { name: "About", href: "/about" },
-  { name: "Insights", href: "/insights" },
+  // { name: "Insights", href: "/insights" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -80,7 +81,12 @@ export function SiteHeader() {
               className="-m-1.5 p-1.5"
               aria-label="Toggle Solutions homepage"
             >
-              <span className="text-2xl font-bold text-white">Toggle</span>
+              <Image
+                src="images/brand/logo.svg"
+                alt="Toggle Solutions"
+                width={100}
+                height={24}
+              />
             </Link>
           </div>
 

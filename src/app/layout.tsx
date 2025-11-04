@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Toggle Solutions | Digital Marketing Agency Malaysia",
+  title: "Toggle Solutions | Digital Marketing Agency",
   description:
     "People-first digital marketing agency helping SMEs and startups grow through smart strategy, data-driven campaigns, and creative execution.",
   keywords: [
@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Toggle Solutions" }],
   creator: "Toggle Solutions",
   publisher: "Toggle Solutions",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   robots: {
     index: true,
     follow: true,

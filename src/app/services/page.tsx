@@ -12,14 +12,15 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import {
   ArrowRight,
+  CheckCircle,
   Target,
   Users,
-  BarChart3,
   Palette,
   Code,
   Mail,
-  CheckCircle,
+  BarChart3,
 } from "lucide-react";
+import { services as catalogServices } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Our Services | Toggle Solutions",
@@ -215,6 +216,34 @@ export default function ServicesPage() {
                     Learn more
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services from Catalog */}
+      <section className="section-alt py-24">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+              Additional services
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              A broader catalog we provide based on your needs
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {catalogServices.map((svc) => (
+              <Card key={svc.name}>
+                <CardHeader>
+                  <CardTitle className="text-lg">{svc.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>
+                    {svc.description || "Details coming soon"}
+                  </CardDescription>
                 </CardContent>
               </Card>
             ))}

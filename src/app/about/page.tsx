@@ -11,7 +11,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { Users, Heart, CheckCircle } from "lucide-react";
-import { values, timeline, team } from "./data";
+import { values, timeline } from "./data";
+import { team } from "@/data/company";
+import { TeamGrid } from "@/components/marketing/team-grid";
 
 export const metadata: Metadata = {
   title: "About Us | Toggle Solutions",
@@ -176,26 +178,7 @@ export default function AboutPage() {
               The people behind Toggle Solutions
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {team.map((member, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 mb-4">
-                    <Users className="h-10 w-10 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <CardDescription className="text-primary font-medium">
-                    {member.role}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    {member.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <TeamGrid members={team.leadership} />
         </div>
       </section>
 
