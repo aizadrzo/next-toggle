@@ -4,6 +4,7 @@ import Link from "next/link";
 import { caseStudies as featuredCaseStudies } from "@/data/company";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
 export default function WorkPage() {
   return (
     <div className="min-h-screen bg-background">
@@ -26,39 +27,247 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* Featured Case Studies from Catalog */}
+      {/* Featured Case Studies */}
       <section className="py-16">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuredCaseStudies.map((study) => (
-              <div className="flex flex-col gap-4" key={study.clientName}>
-                {study.clientLogo && (
-                  <Card className="aspect-square overflow-hidden px-6">
-                    <Image
-                      src={study.clientLogo}
-                      alt={study.clientName}
-                      width={300}
-                      height={300}
-                      className="w-full h-full object-cover"
-                    />
-                  </Card>
-                )}
-                <div className="sm:max-w-sm flex-1">
-                  <h3 className="text-foreground text-xl font-semibold">
-                    {study.clientName}
-                  </h3>
-                  <p className="text-muted-foreground my-4 text-lg">
-                    {study.solution}
+          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
+            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
+              <Image
+                src="/images/case-studies/unitar-ad.png"
+                alt="placeholder"
+                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
+                width={300}
+                height={300}
+              />
+              <div className="flex h-full flex-col justify-between gap-10">
+                <div className="space-y-2">
+                  <h3 className="text-lg">UNITAR International University</h3>
+                  <p className="text-muted-foreground">
+                    Scaled student leads through data-driven, multi-channel
+                    performance campaigns — generating 32,000+ qualified leads
+                    and reducing CPL by 47% in just 4 months.
                   </p>
                 </div>
-                <div>
-                  <h3 className="text-foreground text-2xl font-semibold">
-                    {study.metric}
-                  </h3>
-                  <p className="text-muted-foreground">{study.metricLabel}</p>
+                <div className="flex items-end gap-6">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-primary text-lg font-semibold">
+                      Zaid Saad
+                    </p>
+                    <p className="text-muted-foreground">Digital Strategist</p>
+                  </div>
+                  <img
+                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
+                    alt="logo"
+                  />
                 </div>
               </div>
-            ))}
+            </div>
+            <div className="flex gap-10 self-center lg:flex-col">
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  32K+
+                </p>
+                <p className="text-muted-foreground">Leads Generated</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  47%
+                </p>
+                <p className="text-muted-foreground">CPL Reduction</p>
+              </div>
+            </div>
+          </div>
+          <Separator className="my-20" />
+          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
+            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
+              <Image
+                src="/images/case-studies/kithkin-ad.png"
+                alt="placeholder"
+                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
+                width={300}
+                height={300}
+              />
+              <div className="flex h-full flex-col justify-between gap-10">
+                <div className="space-y-2">
+                  <h3 className="text-lg">Kith & Kin</h3>
+                  <p className="text-muted-foreground">
+                    Increase the number of qualified leads via paid advertising
+                    while keeping the cost per lead (CPL) at a sustainable
+                    level.
+                  </p>
+                </div>
+                <div className="flex items-end gap-6">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-primary text-lg font-semibold">
+                      Jordan Anthony Pinto
+                    </p>
+                    <p className="text-muted-foreground">Marketing Director</p>
+                  </div>
+                  <img
+                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-10 self-center lg:flex-col">
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  392%
+                </p>
+                <p className="text-muted-foreground">Leads Generated</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  3.8x
+                </p>
+                <p className="text-muted-foreground">ROI Improvement</p>
+              </div>
+            </div>
+          </div>
+          <Separator className="my-20" />
+          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
+            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
+              <Image
+                src="/images/case-studies/mahbub-catering-ad.png"
+                alt="placeholder"
+                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
+                width={300}
+                height={300}
+              />
+              <div className="flex h-full flex-col justify-between gap-10">
+                <div className="space-y-2">
+                  <h3 className="text-lg">Restoran Mahbub (Catering)</h3>
+                  <p className="text-muted-foreground">
+                    Curated sales messaging flows across Messenger, Instagram,
+                    and WhatsApp. Generated 300+ message conversations inquiring
+                    about their catering offering.
+                  </p>
+                </div>
+                <div className="flex items-end gap-6">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-primary text-lg font-semibold">
+                      Jordan Anthony Pinto
+                    </p>
+                    <p className="text-muted-foreground">Marketing Director</p>
+                  </div>
+                  <img
+                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-10 self-center lg:flex-col">
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  46%
+                </p>
+                <p className="text-muted-foreground">Increased Leads</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  72%
+                </p>
+                <p className="text-muted-foreground">Across all projects</p>
+              </div>
+            </div>
+          </div>
+          <Separator className="my-20" />
+          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
+            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
+              <Image
+                src="/images/case-studies/mahbub-ad.png"
+                alt="placeholder"
+                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
+                width={300}
+                height={300}
+              />
+              <div className="flex h-full flex-col justify-between gap-10">
+                <div className="space-y-2">
+                  <h3 className="text-lg">Restoran Mahbub (Online Delivery)</h3>
+                  <p className="text-muted-foreground">
+                    Increase the number of qualified leads via paid advertising
+                    while keeping the cost per lead (CPL) at a sustainable
+                    level.
+                  </p>
+                </div>
+                <div className="flex items-end gap-6">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-primary text-lg font-semibold">
+                      Jordan Anthony Pinto
+                    </p>
+                    <p className="text-muted-foreground">Marketing Director</p>
+                  </div>
+                  <img
+                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-10 self-center lg:flex-col">
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  RM2.6M+
+                </p>
+                <p className="text-muted-foreground">Online Revenue</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  72%
+                </p>
+                <p className="text-muted-foreground">Across all projects</p>
+              </div>
+            </div>
+          </div>
+          <Separator className="my-20" />
+          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
+            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
+              <Image
+                src="/images/case-studies/tpl-ad.png"
+                alt="placeholder"
+                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
+                width={300}
+                height={300}
+              />
+              <div className="flex h-full flex-col justify-between gap-10">
+                <div className="space-y-2">
+                  <h3 className="text-lg">TPL Fresh Meats</h3>
+                  <p className="text-muted-foreground">
+                    Ran ads on Meta and Google using their own social media
+                    content. Generated an additional RM172k in revenue at a +20
+                    ROAS.
+                  </p>
+                </div>
+                <div className="flex items-end gap-6">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-primary text-lg font-semibold">
+                      Jordan Anthony Pinto
+                    </p>
+                    <p className="text-muted-foreground">Marketing Director</p>
+                  </div>
+                  <img
+                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
+                    alt="logo"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-10 self-center lg:flex-col">
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  RM172K+
+                </p>
+                <p className="text-muted-foreground">Meta Sales</p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="text-primary text-4xl font-medium sm:text-5xl">
+                  20+
+                </p>
+                <p className="text-muted-foreground">Return on Ad Spend</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
