@@ -20,7 +20,6 @@ export interface TeamMember {
 
 export interface Team {
   leadership: TeamMember[]
-  coreTeam: TeamMember[]
 }
 
 export interface ServiceItem {
@@ -29,6 +28,8 @@ export interface ServiceItem {
 }
 
 export interface CaseStudy {
+  clientLogo?: string
+  image?: string
   clientName: string
   metric: string
   metricLabel: string

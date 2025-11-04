@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = {
   company: [
@@ -42,7 +43,12 @@ export function SiteFooter() {
                 className="text-2xl font-bold text-white"
                 aria-label="Toggle Solutions homepage"
               >
-                Toggle
+                <Image
+                  src="images/brand/logo.svg"
+                  alt="Toggle Solutions"
+                  width={150}
+                  height={24}
+                />
               </Link>
               <p className="mt-4 text-sm text-[#6B6B6B]">
                 People-first digital marketing agency helping SMEs and startups

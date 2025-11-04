@@ -178,8 +178,7 @@ export default function AboutPage() {
               The people behind Toggle Solutions
             </p>
           </div>
-          <TeamGrid title="Leadership" members={team.leadership} />
-          <TeamGrid title="Core Team" members={team.coreTeam} />
+          <TeamGrid members={team.leadership} />
         </div>
       </section>
 

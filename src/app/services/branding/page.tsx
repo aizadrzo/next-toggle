@@ -18,7 +18,10 @@ import Link from "next/link";
 import { Palette, CheckCircle, TrendingUp } from "lucide-react";
 import { deliverables, process, useCases, faqs } from "./data";
 import { CustomHero } from "@/components/marketing/custom-hero";
-import { AnimatedSection, transitionVariants } from "@/components/marketing/animated-section";
+import {
+  AnimatedSection,
+  transitionVariants,
+} from "@/components/marketing/animated-section";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { TextEffect } from "@/components/ui/text-effect";
 
@@ -77,7 +80,8 @@ export default function BrandingPage() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h2"
-                  className="text-3xl font-bold tracking-tight text-foreground mb-6">
+                  className="text-3xl font-bold tracking-tight text-foreground mb-6"
+                >
                   What is branding?
                 </TextEffect>
                 <div className="space-y-4 text-muted-foreground">
@@ -163,7 +167,9 @@ export default function BrandingPage() {
                       <h3 className="text-xl font-semibold text-foreground mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <p className="text-muted-foreground">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 ))}

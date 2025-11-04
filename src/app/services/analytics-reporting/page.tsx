@@ -21,6 +21,7 @@ import { deliverables, process, useCases, faqs } from "./data";
 import { CustomHero } from "@/components/marketing/custom-hero";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { TextEffect } from "@/components/ui/text-effect";
+import { Variants } from "motion/react";
 
 export const metadata: Metadata = {
   title: "Analytics & Reporting Services | Toggle Solutions",
@@ -48,19 +49,21 @@ export const metadata: Metadata = {
   },
 };
 
-const transitionVariants = {
+const transitionVariants: Variants = {
   item: {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error - hidden is not a valid property in the Variants type
     hidden: {
       opacity: 0,
-      filter: 'blur(12px)',
+      filter: "blur(12px)",
       y: 12,
     },
     visible: {
       opacity: 1,
-      filter: 'blur(0px)',
+      filter: "blur(0px)",
       y: 0,
       transition: {
-        type: 'spring',
+        type: "spring",
         bounce: 0.3,
         duration: 1.5,
       },
@@ -97,7 +100,8 @@ export default function AnalyticsReportingPage() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h2"
-                  className="text-3xl font-bold tracking-tight text-foreground mb-6">
+                  className="text-3xl font-bold tracking-tight text-foreground mb-6"
+                >
                   What is analytics & reporting?
                 </TextEffect>
                 <div className="space-y-4 text-muted-foreground">
@@ -151,7 +155,8 @@ export default function AnalyticsReportingPage() {
                 },
               },
               ...transitionVariants,
-            }}>
+            }}
+          >
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {deliverables.map((deliverable, index) => (
                 <Card key={index} className="text-center">
@@ -190,7 +195,8 @@ export default function AnalyticsReportingPage() {
                   },
                 },
                 ...transitionVariants,
-              }}>
+              }}
+            >
               <div className="space-y-8">
                 {process.map((item, index) => (
                   <div key={index} className="flex gap-6">
@@ -203,7 +209,9 @@ export default function AnalyticsReportingPage() {
                       <h3 className="text-xl font-semibold text-foreground mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <p className="text-muted-foreground">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -234,7 +242,8 @@ export default function AnalyticsReportingPage() {
                 },
               },
               ...transitionVariants,
-            }}>
+            }}
+          >
             <div className="grid gap-8 md:grid-cols-3">
               {useCases.map((useCase, index) => (
                 <Card key={index}>

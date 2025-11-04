@@ -45,20 +45,6 @@ export const team: Team = {
         'RPG Commerce, Brighttail, LTSE Equity, Avontus Software, Communardo, Marvelution, Elements Apps, and Catapult Labs.',
     },
     {
-      name: 'AIZAD RIDZO',
-      title: 'IT & Development Director',
-      details: [],
-      clients: '',
-    },
-  ],
-  coreTeam: [
-    {
-      name: 'KIN XIAN',
-      title: 'Creative Lead',
-      details: [],
-      clients: '',
-    },
-    {
       name: 'ZAID SAAD',
       title: 'Digital Strategist',
       details: [
@@ -77,12 +63,6 @@ export const team: Team = {
         'USD 5m managed.',
       ],
       clients: 'RPG Commerce, Antidote Lifestyle, AIA Malaysia, Zeiss, Bridgestone.',
-    },
-    {
-      name: 'TIFFANY',
-      title: 'CRM Lead',
-      details: [],
-      clients: '',
     },
   ],
 }
@@ -141,6 +121,8 @@ export const services: ServiceItem[] = [
 
 export const caseStudies: CaseStudy[] = [
   {
+    clientLogo: '/images/client-logos/kith&kin.svg',
+    image: '/images/case-studies/kith-kin_case-study.png',
     clientName: 'KITH & KIN REALTY',
     metric: '392%',
     metricLabel: 'increase in qualified leads',
@@ -151,6 +133,7 @@ export const caseStudies: CaseStudy[] = [
       'Increase the number of qualified leads via paid advertising while keeping the cost per lead (CPL) at a sustainable level.',
   },
   {
+    clientLogo: '/images/client-logos/restoranmahbub.svg',
     clientName: 'MAHBUB - CATERING',
     metric: '+46%',
     metricLabel: 'catering leads',
@@ -161,6 +144,7 @@ export const caseStudies: CaseStudy[] = [
       'Curated sales messaging flows across Messenger, Instagram, and WhatsApp. Generated 300+ message conversations inquiring about their catering offering.',
   },
   {
+    clientLogo: '/images/client-logos/restoranmahbub.svg',
     clientName: 'RESTORAN MAHBUB (Online Delivery)',
     metric: 'RM2.6M+',
     metricLabel: 'in online revenue',
@@ -171,6 +155,7 @@ export const caseStudies: CaseStudy[] = [
       'Ran successful marketing campaigns on Meta and Google to generate revenue online, showing very healthy year-on-year growth from 2021 to 2023.',
   },
   {
+    clientLogo: '/images/client-logos/tpl-fresh-meats.svg',
     clientName: 'TPL FRESH MEATS',
     metric: 'RM172K+',
     metricLabel: 'in sales from Meta',
