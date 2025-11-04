@@ -1,8 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { caseStudies as featuredCaseStudies } from "@/data/company";
-import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 export default function WorkPage() {
@@ -12,9 +9,6 @@ export default function WorkPage() {
       <section className="relative py-24 sm:py-32">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <Badge variant="secondary" className="mb-8">
-              Our Work
-            </Badge>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
               Real results for{" "}
               <span className="text-primary">real businesses</span>
