@@ -257,7 +257,7 @@ export default function WorkPage() {
               </div>
               <div className="flex flex-col gap-2">
                 <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  20+
+                  20x
                 </p>
                 <p className="text-muted-foreground">Return on Ad Spend</p>
               </div>

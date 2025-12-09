@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 // Container replaced with standard Tailwind classes
 import {
@@ -30,7 +31,7 @@ export default function HomePage() {
       />
 
       {/* Growth Goals Section */}
-      <section className="section-alt py-24">
+      <section className="py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -90,7 +91,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="section-alt py-24">
+      <section className="py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -106,7 +107,7 @@ export default function HomePage() {
               {services.map((service) => (
                 <Card
                   key={service.name}
-                  className="group hover:shadow-lg transition-shadow"
+                  className="group hover:shadow-lg transition-shadow relative"
                 >
                   <CardHeader>
                     <service.icon className="h-8 w-8 text-primary mb-4" />
@@ -139,7 +140,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-alt py-24">
+      <section className="py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -186,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-alt py-24">
+      <section className=" py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="cta-section mx-auto max-w-4xl text-center p-16">
             <div className="relative z-10">
