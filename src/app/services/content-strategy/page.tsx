@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Code, MonitorSmartphone, ShoppingCart, Code2, Check } from "lucide-react";
+import { ArrowRight, NotepadText, ClipboardCheck, PenTool, Megaphone, Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Web Development - Toggle Solutions",
+  title: "Content Strategy - Toggle Solutions",
 };
 
-export default function WebDevelopmentPage() {
+export default function ContentStrategyPage() {
   return (
     <div className="bg-background transition-colors duration-300">
       {/* Hero Section */}
@@ -16,13 +16,13 @@ export default function WebDevelopmentPage() {
         
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
           <div className="w-20 h-20 mb-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 transform rotate-3">
-            <Code className="w-10 h-10 text-white" />
+            <NotepadText className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
-            Custom <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400">Web Development</span>
+            Strategic <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400">Content Marketing</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            We build scalable, secure, and high-performance websites and applications tailored to your unique business needs.
+            We craft compelling narratives and data-driven content strategies that engage your audience, build authority, and drive measurable growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 
@@ -45,9 +45,9 @@ export default function WebDevelopmentPage() {
       <section className="py-24 bg-background">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground">Comprehensive Development Solutions</h2>
+            <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground">Comprehensive Content Solutions</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              From simple landing pages to complex enterprise web applications, we have the expertise to deliver excellence.
+              From detailed audits to creative storytelling, we provide end-to-end content services that drive engagement and conversions.
             </p>
           </div>
 
@@ -55,18 +55,18 @@ export default function WebDevelopmentPage() {
             {/* Service 1 */}
             <div className="group relative bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-border">
               <div className="w-14 h-14 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                <MonitorSmartphone className="w-8 h-8" />
+                <ClipboardCheck className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">Responsive Websites</h3>
+              <h3 className="text-xl font-bold mb-3 text-foreground">Strategy & Planning</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Pixel-perfect websites that look stunning and function flawlessly across all devices, ensuring a seamless user experience for your mobile and desktop visitors.
+                We analyze market trends and competitor gaps to build a comprehensive roadmap for content that delivers tangible results and ROI.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center text-sm text-muted-foreground">
-                  <Check className="w-4 h-4 text-primary mr-2" /> Mobile-First Design
+                  <Check className="w-4 h-4 text-primary mr-2" /> Content Audits
                 </li>
                 <li className="flex items-center text-sm text-muted-foreground">
-                  <Check className="w-4 h-4 text-primary mr-2" /> Cross-Browser Compatibility
+                  <Check className="w-4 h-4 text-primary mr-2" /> Editorial Calendars
                 </li>
               </ul>
             </div>
@@ -74,18 +74,18 @@ export default function WebDevelopmentPage() {
             {/* Service 2 */}
             <div className="group relative bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-border">
               <div className="w-14 h-14 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
-                <ShoppingCart className="w-8 h-8" />
+                <PenTool className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">E-Commerce Platforms</h3>
+              <h3 className="text-xl font-bold mb-3 text-foreground">Creative Copywriting</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Robust online stores designed to convert. We implement secure payment gateways, inventory management, and intuitive shopping experiences.
+                High-quality, persuasive writing for websites, blogs, and ad campaigns that captures attention and inspires action from your customers.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center text-sm text-muted-foreground">
-                  <Check className="w-4 h-4 text-indigo-600 mr-2" /> Shopify & WooCommerce
+                  <Check className="w-4 h-4 text-indigo-600 mr-2" /> SEO Blog Posts
                 </li>
                 <li className="flex items-center text-sm text-muted-foreground">
-                  <Check className="w-4 h-4 text-indigo-600 mr-2" /> Custom Checkout Flows
+                  <Check className="w-4 h-4 text-indigo-600 mr-2" /> Ad & Landing Page Copy
                 </li>
               </ul>
             </div>
@@ -93,18 +93,18 @@ export default function WebDevelopmentPage() {
             {/* Service 3 */}
             <div className="group relative bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-border">
               <div className="w-14 h-14 rounded-xl bg-sky-50 dark:bg-sky-900/20 flex items-center justify-center text-sky-600 mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
-                <Code2 className="w-8 h-8" />
+                <Megaphone className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">Custom Web Applications</h3>
+              <h3 className="text-xl font-bold mb-3 text-foreground">Brand Storytelling</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Tailor-made software solutions to streamline your business operations. From customer portals to internal management dashboards.
+                We help you define and articulate your unique brand identity through consistent, powerful messaging across all digital channels.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center text-sm text-muted-foreground">
-                  <Check className="w-4 h-4 text-sky-600 mr-2" /> React / Vue / Angular
+                  <Check className="w-4 h-4 text-sky-600 mr-2" /> Brand Voice Guides
                 </li>
                 <li className="flex items-center text-sm text-muted-foreground">
-                  <Check className="w-4 h-4 text-sky-600 mr-2" /> API Integration
+                  <Check className="w-4 h-4 text-sky-600 mr-2" /> Multi-channel Narratives
                 </li>
               </ul>
             </div>
@@ -118,7 +118,7 @@ export default function WebDevelopmentPage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground">Client Portfolio</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Explore some of our successful collaborations and the digital products we've brought to life.
+              See how our strategic content solutions have helped businesses grow their audience and establish thought leadership.
             </p>
           </div>
 
@@ -128,22 +128,22 @@ export default function WebDevelopmentPage() {
               <div className="relative h-56 overflow-hidden">
                 <img 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU1W7ghZ_1DGAAu6Im6O9xTY628VFj65bYNue_E-WEpi8g1utbV_jU2vVD7sX0CmsAqZVJf2Ls5lopamLToM-EhjXU0UZ8yEgCV5PAmEJPW_PQlC0oThb5kK-IKuDClTiGp2-b1u5ksEJ7u4UZr61nJG_4nJOoG10oa_BMwvh72qEIs7PqJmvG6dpuLElWFZNWRqJE-EapJO95-5XwieBeXtI_5EE30Z-F0Cks4lGZ-_n-xwemuHraoOn_G_X03woXmYduOjFhaA" 
-                  alt="FinTech Dashboard Project" 
+                  alt="FinTech Content Strategy" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="mb-4">
-                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">FinTech</span>
-                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">Nova Financial</h3>
+                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">SaaS / B2B</span>
+                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">CloudScale Blog</h3>
                   <p className="text-sm text-muted-foreground mt-2 line-clamp-3">
-                    A comprehensive analytics dashboard for a leading financial services firm, featuring real-time data visualization and secure reporting.
+                    A complete overhaul of the company blog with SEO-focused technical articles, resulting in a 200% increase in organic traffic.
                   </p>
                 </div>
                 <div className="mt-auto flex gap-2 flex-wrap">
-                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">React</span>
-                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">D3.js</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">SEO Strategy</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Technical Writing</span>
                 </div>
               </div>
             </div>
@@ -153,22 +153,22 @@ export default function WebDevelopmentPage() {
               <div className="relative h-56 overflow-hidden">
                 <img 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi7F71jTOrIOMO4oUfnZJjWEiqzGW4z8sfb2cIBmr2lpBXXuV15yZrO55I7_nQpGuXIMbQrbmqmLD-wZdt8g4_V0cftDnARi0R56Oh66OdEttmyBx5GDbGYFvyRkvdyzlUGm-BKH1EBJj-dBdMyfrk-kUlyKR6aJ_zh4D5QJnO_cpy1D5cHLvWgROwR_vJwagPmX4OqHaXWrEsbHrOBiyJdT8QyPEyOMaUY0Gioc24EgJaDSkSvLx7sF9Drohh3zGsphVeqSentQ" 
-                  alt="E-Commerce Fashion Store Project" 
+                  alt="Fashion Lifestyle Content" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="mb-4">
-                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">E-Commerce</span>
-                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">Lumina Fashion</h3>
+                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">Lifestyle Brand</span>
+                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">Velvet Home Stories</h3>
                   <p className="text-sm text-muted-foreground mt-2 line-clamp-3">
-                    A modern, minimalist e-commerce platform designed for high conversion, integrating custom inventory management and payment gateways.
+                    Developing a distinct brand voice through social media storytelling and email newsletters that improved customer retention by 40%.
                   </p>
                 </div>
                 <div className="mt-auto flex gap-2 flex-wrap">
-                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Shopify Plus</span>
-                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Liquid</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Brand Voice</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Email Marketing</span>
                 </div>
               </div>
             </div>
@@ -178,22 +178,22 @@ export default function WebDevelopmentPage() {
               <div className="relative h-56 overflow-hidden">
                 <img 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZs871StUwJ7s4dx4wjTD1JdDO2zaO6K5v3k-_l-WJuGfSHfyQbr9Yp3COelWmf5WFgyxOnHgQp6pyu9IKxfWxknSXg00WbJZPb_YO1fwPQTHKNxzosABUiv-f5eqGKV9R-Pb0a61DSkbog2361CitzfAOoumJJ2VtYCxiJLffYuY-7AKoMmA0Imi2ZeZr_oOxcQ7oilWrbLsFfdsDxXydBkjL-B_xUWFpU3-F0csN4BZetzW1mep8aeijM60Skmuo6szMKWxtjg" 
-                  alt="Healthcare Mobile App Project" 
+                  alt="Healthcare Education Content" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="mb-4">
-                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">Healthcare</span>
-                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">MediConnect</h3>
+                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">EdTech / Healthcare</span>
+                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">LearnFast Academy</h3>
                   <p className="text-sm text-muted-foreground mt-2 line-clamp-3">
-                    A HIPAA-compliant patient portal application streamlining appointment scheduling and secure doctor-patient communication.
+                    Creating a comprehensive library of educational whitepapers and guides to simplify complex topics and establish industry authority.
                   </p>
                 </div>
                 <div className="mt-auto flex gap-2 flex-wrap">
-                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Vue.js</span>
-                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Node.js</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Copywriting</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Education</span>
                 </div>
               </div>
             </div>
@@ -210,9 +210,9 @@ export default function WebDevelopmentPage() {
             
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
               <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Build Something Amazing?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Tell Your Story?</h2>
                 <p className="text-blue-100 text-lg">
-                  Let's discuss your project and see how we can help you achieve your digital goals. Get a free consultation today.
+                  Let's discuss how a strategic content plan can transform your digital presence and elevate your brand. Get a free consultation today.
                 </p>
               </div>
               <div className="flex-shrink-0">
