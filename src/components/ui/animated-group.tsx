@@ -102,7 +102,6 @@ const addDefaultVariants = (variants: Variants) => ({
 
 function AnimatedGroup({
   children,
-  className,
   variants,
   preset,
   as = "div",

@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Search, ArrowRight, Code, TrendingUp, FileText, ChevronDown } from "lucide-react";
+import { Menu, ArrowRight, Code, TrendingUp, FileText, ChevronDown } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
