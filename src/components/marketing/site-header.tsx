@@ -41,7 +41,6 @@ const services = [
 const navigation = [
   { name: "Work", href: "/work" },
   { name: "About", href: "/about" },
-  { name: "Resources", href: "/blog" },
 ];
 
 export function SiteHeader() {
@@ -64,60 +63,60 @@ export function SiteHeader() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-muted-foreground hover:text-primary font-medium bg-transparent">Services</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <a
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500 to-indigo-600 p-6 no-underline outline-none focus:shadow-md"
-                            href="/services"
+          {/* Right Actions & Navigation */}
+          <div className="flex items-center gap-8">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center justify-center">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-muted-foreground hover:text-primary font-medium bg-transparent">Services</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                        <li className="row-span-3">
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500 to-indigo-600 p-6 no-underline outline-none focus:shadow-md"
+                              href="/services"
+                            >
+                              <div className="h-6 w-6 text-white mb-2">
+                                <Code className="h-6 w-6" />
+                              </div>
+                              <div className="mb-2 mt-4 text-lg font-medium text-white">
+                                Our Services
+                              </div>
+                              <p className="text-sm leading-tight text-white/90">
+                                Comprehensive digital solutions tailored to your business needs.
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        {services.map((service) => (
+                          <ListItem
+                            key={service.title}
+                            title={service.title}
+                            href={service.href}
+                            icon={service.icon}
                           >
-                            <div className="h-6 w-6 text-white mb-2">
-                              <Code className="h-6 w-6" />
-                            </div>
-                            <div className="mb-2 mt-4 text-lg font-medium text-white">
-                              Our Services
-                            </div>
-                            <p className="text-sm leading-tight text-white/90">
-                              Comprehensive digital solutions tailored to your business needs.
-                            </p>
-                          </a>
-                        </NavigationMenuLink>
-                      </li>
-                      {services.map((service) => (
-                        <ListItem
-                          key={service.title}
-                          title={service.title}
-                          href={service.href}
-                          icon={service.icon}
-                        >
-                          {service.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                {navigation.map((item) => (
-                  <NavigationMenuItem key={item.name}>
-                    <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-primary font-medium bg-transparent")}>
-                        {item.name}
-                      </NavigationMenuLink>
-                    </Link>
+                            {service.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
                   </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
+                  {navigation.map((item) => (
+                    <NavigationMenuItem key={item.name}>
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-primary font-medium bg-transparent")}>
+                          {item.name}
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-4">
             <Button
               asChild
               className="hidden md:inline-flex rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/50 shadow-none"

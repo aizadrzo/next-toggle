@@ -6,7 +6,6 @@ import {
   Award,
   Users,
   Star,
-  Quote,
 } from "lucide-react";
 
 export default function Home() {
@@ -404,7 +403,6 @@ export default function Home() {
                     : ""
                 }`}
               >
-                <Quote className="text-blue-100 dark:text-blue-900/40 w-12 h-12 absolute top-4 right-4" />
                 <div className="flex items-center gap-1 text-yellow-400 mb-4 text-sm">
                   {[...Array(5)].map((_, j) => (
                     <Star key={j} className="w-4 h-4 fill-current" />
