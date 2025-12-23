@@ -35,24 +35,12 @@ export default function WorkPage() {
               />
               <div className="flex h-full flex-col justify-between gap-10">
                 <div className="space-y-2">
-                  <h3 className="text-lg">UNITAR International University</h3>
+                  <h3 className="text-2xl font-bold">UNITAR International University</h3>
                   <p className="text-muted-foreground">
                     Scaled student leads through data-driven, multi-channel
                     performance campaigns — generating 32,000+ qualified leads
                     and reducing CPL by 47% in just 4 months.
                   </p>
-                </div>
-                <div className="flex items-end gap-6">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-primary text-lg font-semibold">
-                      Zaid Saad
-                    </p>
-                    <p className="text-muted-foreground">Digital Strategist</p>
-                  </div>
-                  <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
-                    alt="logo"
-                  />
                 </div>
               </div>
             </div>
@@ -83,24 +71,12 @@ export default function WorkPage() {
               />
               <div className="flex h-full flex-col justify-between gap-10">
                 <div className="space-y-2">
-                  <h3 className="text-lg">Kith & Kin</h3>
+                  <h3 className="text-2xl font-bold">Kith & Kin</h3>
                   <p className="text-muted-foreground">
                     Increase the number of qualified leads via paid advertising
                     while keeping the cost per lead (CPL) at a sustainable
                     level.
                   </p>
-                </div>
-                <div className="flex items-end gap-6">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-primary text-lg font-semibold">
-                      Jordan Anthony Pinto
-                    </p>
-                    <p className="text-muted-foreground">Marketing Director</p>
-                  </div>
-                  <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg"
-                    alt="logo"
-                  />
                 </div>
               </div>
             </div>
@@ -131,24 +107,12 @@ export default function WorkPage() {
               />
               <div className="flex h-full flex-col justify-between gap-10">
                 <div className="space-y-2">
-                  <h3 className="text-lg">Restoran Mahbub (Catering)</h3>
+                  <h3 className="text-2xl font-bold">Restoran Mahbub (Catering)</h3>
                   <p className="text-muted-foreground">
                     Curated sales messaging flows across Messenger, Instagram,
                     and WhatsApp. Generated 300+ message conversations inquiring
                     about their catering offering.
                   </p>
-                </div>
-                <div className="flex items-end gap-6">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-primary text-lg font-semibold">
-                      Jordan Anthony Pinto
-                    </p>
-                    <p className="text-muted-foreground">Marketing Director</p>
-                  </div>
-                  <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
-                    alt="logo"
-                  />
                 </div>
               </div>
             </div>
@@ -179,24 +143,12 @@ export default function WorkPage() {
               />
               <div className="flex h-full flex-col justify-between gap-10">
                 <div className="space-y-2">
-                  <h3 className="text-lg">Restoran Mahbub (Online Delivery)</h3>
+                  <h3 className="text-2xl font-bold">Restoran Mahbub (Online Delivery)</h3>
                   <p className="text-muted-foreground">
                     Increase the number of qualified leads via paid advertising
                     while keeping the cost per lead (CPL) at a sustainable
                     level.
                   </p>
-                </div>
-                <div className="flex items-end gap-6">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-primary text-lg font-semibold">
-                      Jordan Anthony Pinto
-                    </p>
-                    <p className="text-muted-foreground">Marketing Director</p>
-                  </div>
-                  <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
-                    alt="logo"
-                  />
                 </div>
               </div>
             </div>
@@ -227,24 +179,12 @@ export default function WorkPage() {
               />
               <div className="flex h-full flex-col justify-between gap-10">
                 <div className="space-y-2">
-                  <h3 className="text-lg">TPL Fresh Meats</h3>
+                  <h3 className="text-2xl font-bold">TPL Fresh Meats</h3>
                   <p className="text-muted-foreground">
                     Ran ads on Meta and Google using their own social media
                     content. Generated an additional RM172k in revenue at a +20
                     ROAS.
                   </p>
-                </div>
-                <div className="flex items-end gap-6">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-primary text-lg font-semibold">
-                      Jordan Anthony Pinto
-                    </p>
-                    <p className="text-muted-foreground">Marketing Director</p>
-                  </div>
-                  <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
-                    alt="logo"
-                  />
                 </div>
               </div>
             </div>
