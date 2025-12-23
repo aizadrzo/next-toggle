@@ -49,7 +49,7 @@ export default function Home() {
                 size="lg"
                 className="rounded-full h-auto py-3.5 px-8 text-base bg-background/50 backdrop-blur-sm"
               >
-                <Link href="#contact">View Portfolio</Link>
+                <Link href="/work">View Portfolio</Link>
               </Button>
             </div>
             <div className="mt-10 flex items-center justify-center lg:justify-start gap-8 text-muted-foreground opacity-70">

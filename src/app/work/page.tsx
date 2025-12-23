@@ -6,11 +6,8 @@ export default function WorkPage() {
     <div className="bg-white dark:bg-slate-950 font-sans antialiased selection:bg-blue-100 selection:text-blue-900">
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50/50 dark:from-slate-950 dark:to-slate-900/50">
+      <section className="pt-48 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50/50 dark:from-slate-950 dark:to-slate-900/50">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-flex items-center px-3 py-1 rounded-md text-xs font-bold bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 uppercase tracking-wider mb-8 border border-blue-100 dark:border-blue-800">
-            Our Work
-          </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 leading-tight">
             Real results for <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
