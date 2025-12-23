@@ -167,21 +167,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Meet the team
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              The people behind Toggle Solutions
-            </p>
-          </div>
-          <TeamGrid members={team.leadership} />
-        </div>
-      </section>
-
       {/* Culture Section */}
       <section className="section-alt py-24">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">

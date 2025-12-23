@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import {
   ArrowRight,
   TrendingUp,
@@ -231,7 +232,7 @@ export default function Home() {
               variant="outline"
               className="hidden md:inline-flex rounded-full border-muted-foreground/20"
             >
-              <Link href="#">View All Projects</Link>
+              <Link href="/work">View All Projects</Link>
             </Button>
           </div>
           <div className="grid md:grid-cols-2 gap-10">
@@ -283,9 +284,15 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 text-center md:hidden">
-            <Button variant="outline" className="w-full rounded-full">
+            <Link
+              href="/work"
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                "w-full rounded-full"
+              )}
+            >
               View All Projects
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
