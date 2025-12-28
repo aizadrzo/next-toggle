@@ -1,164 +1,176 @@
-"use client"
+"use client";
+import { Logo } from "@/components/logo";
+import { Button } from "@/components/ui/button";
+import { Check, Mail, Menu, SendHorizonal, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
-import React from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { HeroHeader } from './header'
-import { ChevronRight } from 'lucide-react'
-import { ProgressiveBlur } from '../../components/motion-primitives/progressive-blur'
-import { InfiniteSlider } from '../../components/motion-primitives/infinite-slider'
+const menuItems = [
+  { name: "Features", href: "#" },
+  { name: "Solution", href: "#" },
+  { name: "Pricing", href: "#" },
+  { name: "About", href: "#" },
+];
 
 export default function HeroSection() {
-    return (
-        <>
-            <main className="overflow-x-hidden">
-                <section>
-                    <div className="py-24 md:pb-32 lg:pb-36 lg:pt-36">
-                        <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block lg:px-12">
-                            <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-                                <h1 className="mt-8 max-w-2xl text-semibold text-5xl md:text-6xl lg:mt-16 xl:text-7xl">Revolutionize Your Digital Marketing</h1>
-                                <p className="mt-8 max-w-2xl text-balance text-lg">
-                                    Data-driven strategies for growth. We combine creative
-                                    storytelling with technical expertise to scale your brand and
-                                    drive measurable results.
-                                </p>
+  const [menuState, setMenuState] = useState(false);
+  return (
+    <>
+      <header>
+        <nav
+          data-state={menuState && "active"}
+          className="fixed z-20 w-full border-b border-dashed bg-white backdrop-blur md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent"
+        >
+          <div className="m-auto max-w-5xl px-6">
+            <div className="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+              <div className="flex w-full justify-between lg:w-auto">
+                <Link
+                  href="/"
+                  aria-label="home"
+                  className="flex items-center space-x-2"
+                >
+                  <Logo />
+                </Link>
 
-                                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                        className="h-12 rounded-full pl-5 pr-3 text-base">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Get Started</span>
-                                            <ChevronRight className="ml-1" />
-                                        </Link>
-                                    </Button>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Our Work</span>
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="aspect-2/3 absolute inset-1 -z-10 overflow-hidden rounded-3xl lg:aspect-video lg:rounded-[3rem] dark:border-white/5">
-                            <img
-                                className="size-full object-cover opacity-50 dark:opacity-35 dark:lg:opacity-75"
-                                src="/images/hero-img.png"
-                                alt="Hero Background"
-                            />
-                        </div>
+                <button
+                  onClick={() => setMenuState(!menuState)}
+                  aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                  className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+                >
+                  <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                  <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                </button>
+              </div>
+
+              <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+                <div className="lg:pr-4">
+                  <ul className="space-y-6 text-base lg:flex lg:gap-8 lg:space-y-0 lg:text-sm">
+                    {menuItems.map((item, index) => (
+                      <li key={index}>
+                        <Link
+                          href={item.href}
+                          className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        >
+                          <span>{item.name}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:pl-6">
+                  <Button asChild variant="outline" size="sm">
+                    <Link href="#">
+                      <span>Login</span>
+                    </Link>
+                  </Button>
+
+                  <Button asChild size="sm">
+                    <Link href="#">
+                      <span>Login</span>
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section className="overflow-hidden">
+          <div className="relative mx-auto max-w-5xl px-6 py-28 lg:py-20">
+            <div className="lg:flex lg:items-center lg:gap-12">
+              <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
+                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">
+                  The All-In-One Growth Engine for Modern Brands
+                </h1>
+                <p className="mt-8">
+                  We synchronize Performance Marketing, Creative Strategy, and
+                  Retention Systems to drive profitable growth.
+                </p>
+
+                <div>
+                  <form
+                    action=""
+                    className="mx-auto my-10 max-w-sm lg:my-12 lg:ml-0 lg:mr-auto"
+                  >
+                    <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.75rem)] border pr-3 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
+                      <Mail className="text-caption pointer-events-none absolute inset-y-0 left-5 my-auto size-5" />
+
+                      <input
+                        placeholder="Your mail address"
+                        className="h-14 w-full bg-transparent pl-12 focus:outline-none"
+                        type="email"
+                      />
+
+                      <div className="md:pr-1.5 lg:pr-0">
+                        <Button
+                          aria-label="submit"
+                          className="rounded-(--radius)"
+                        >
+                          <span className="hidden md:block">Get Started</span>
+                          <SendHorizonal
+                            className="relative mx-auto size-5 md:hidden"
+                            strokeWidth={2}
+                          />
+                        </Button>
+                      </div>
                     </div>
-                </section>
-                <section className="bg-transparent pb-2">
-                    <div className="group relative m-auto max-w-6xl px-6">
-                        <div className="flex flex-col items-center md:flex-row">
-                            <div className="md:max-w-44 md:pr-6">
-                                <p className="text-end text-sm">Powering the best teams</p>
-                            </div>
-                            <div className="relative py-6 md:w-[calc(100%-11rem)]">
-                                <InfiniteSlider
-                                    speedOnHover={20}
-                                    speed={40}
-                                    gap={112}>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                            alt="Nvidia Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
+                  </form>
 
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/column.svg"
-                                            alt="Column Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/github.svg"
-                                            alt="GitHub Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/nike.svg"
-                                            alt="Nike Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-5 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                                            alt="Lemon Squeezy Logo"
-                                            height="20"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-4 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/laravel.svg"
-                                            alt="Laravel Logo"
-                                            height="16"
-                                            width="auto"
-                                        />
-                                    </div>
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-7 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/lilly.svg"
-                                            alt="Lilly Logo"
-                                            height="28"
-                                            width="auto"
-                                        />
-                                    </div>
-
-                                    <div className="flex">
-                                        <img
-                                            className="mx-auto h-6 w-fit dark:invert"
-                                            src="https://html.tailus.io/blocks/customers/openai.svg"
-                                            alt="OpenAI Logo"
-                                            height="24"
-                                            width="auto"
-                                        />
-                                    </div>
-                                </InfiniteSlider>
-
-                                <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
-                                <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
-                                <ProgressiveBlur
-                                    className="pointer-events-none absolute left-0 top-0 h-full w-20"
-                                    direction="left"
-                                    blurIntensity={1}
-                                />
-                                <ProgressiveBlur
-                                    className="pointer-events-none absolute right-0 top-0 h-full w-20"
-                                    direction="right"
-                                    blurIntensity={1}
-                                />
-                            </div>
-                        </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
+                        <Check className="w-4 h-4 font-bold" strokeWidth={3} />
+                      </div>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        Profit Over ROAS
+                      </span>
                     </div>
-                </section>
-            </main>
-        </>
-    )
+                    <div className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
+                        <Check className="w-4 h-4 font-bold" strokeWidth={3} />
+                      </div>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        Senior-Led Strategy
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
+                        <Check className="w-4 h-4 font-bold" strokeWidth={3} />
+                      </div>
+                      <span className="text-gray-700 dark:text-gray-300">
+                        Creative That Converts
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute inset-0 -mx-4 rounded-3xl p-3 lg:col-span-3">
+              <div className="relative">
+                <div className="bg-radial-[at_65%_25%] to-background z-1 -inset-17 absolute from-transparent to-40%"></div>
+                <Image
+                  className="hidden dark:block"
+                  src="/images/hero-img.png"
+                  alt="app illustration"
+                  width={2796}
+                  height={2008}
+                />
+                <Image
+                  className="dark:hidden"
+                  src="/images/hero-img.png"
+                  alt="app illustration"
+                  width={2796}
+                  height={2008}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 }

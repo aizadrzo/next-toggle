@@ -4,7 +4,14 @@ import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, ArrowRight, Code, TrendingUp, FileText, ChevronDown } from "lucide-react";
+import {
+  Menu,
+  ArrowRight,
+  Code,
+  TrendingUp,
+  FileText,
+  ChevronDown,
+} from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -21,7 +28,8 @@ const services = [
   {
     title: "Web Development",
     href: "/services/web-development",
-    description: "Custom websites and applications built with modern technologies.",
+    description:
+      "Custom websites and applications built with modern technologies.",
     icon: Code,
   },
   {
@@ -70,7 +78,9 @@ export function SiteHeader() {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-muted-foreground hover:text-primary font-medium bg-transparent">Services</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="text-muted-foreground hover:text-primary font-medium bg-transparent">
+                      Services
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                         <li className="row-span-3">
@@ -86,7 +96,8 @@ export function SiteHeader() {
                                 Our Services
                               </div>
                               <p className="text-sm leading-tight text-white/90">
-                                Comprehensive digital solutions tailored to your business needs.
+                                Comprehensive digital solutions tailored to your
+                                business needs.
                               </p>
                             </a>
                           </NavigationMenuLink>
@@ -107,7 +118,12 @@ export function SiteHeader() {
                   {navigation.map((item) => (
                     <NavigationMenuItem key={item.name}>
                       <Link href={item.href} legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-primary font-medium bg-transparent")}>
+                        <NavigationMenuLink
+                          className={cn(
+                            navigationMenuTriggerStyle(),
+                            "text-muted-foreground hover:text-primary font-medium bg-transparent"
+                          )}
+                        >
                           {item.name}
                         </NavigationMenuLink>
                       </Link>
@@ -137,31 +153,38 @@ export function SiteHeader() {
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                   <div className="flex flex-col gap-4 mt-6">
-                     {/* Mobile Services Accordion-style */}
-                     <div className="space-y-4">
-                        <div 
-                          className="flex items-center justify-between text-lg font-medium text-foreground cursor-pointer"
-                          onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                        >
-                          Services
-                          <ChevronDown className={cn("w-4 h-4 transition-transform", mobileServicesOpen ? "rotate-180" : "")} />
+                    {/* Mobile Services Accordion-style */}
+                    <div className="space-y-4">
+                      <div
+                        className="flex items-center justify-between text-lg font-medium text-foreground cursor-pointer"
+                        onClick={() =>
+                          setMobileServicesOpen(!mobileServicesOpen)
+                        }
+                      >
+                        Services
+                        <ChevronDown
+                          className={cn(
+                            "w-4 h-4 transition-transform",
+                            mobileServicesOpen ? "rotate-180" : ""
+                          )}
+                        />
+                      </div>
+
+                      {mobileServicesOpen && (
+                        <div className="pl-4 space-y-3 border-l-2 border-border ml-2">
+                          {services.map((service) => (
+                            <Link
+                              key={service.title}
+                              href={service.href}
+                              className="block text-sm text-muted-foreground hover:text-primary"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
                         </div>
-                        
-                        {mobileServicesOpen && (
-                          <div className="pl-4 space-y-3 border-l-2 border-border ml-2">
-                            {services.map((service) => (
-                              <Link
-                                key={service.title}
-                                href={service.href}
-                                className="block text-sm text-muted-foreground hover:text-primary"
-                                onClick={() => setMobileMenuOpen(false)}
-                              >
-                                {service.title}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                     </div>
+                      )}
+                    </div>
 
                     {navigation.map((item) => (
                       <Link
@@ -173,7 +196,10 @@ export function SiteHeader() {
                         {item.name}
                       </Link>
                     ))}
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                    <Link
+                      href="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       <Button className="w-full mt-4">Get in Touch</Button>
                     </Link>
                   </div>
@@ -186,4 +212,3 @@ export function SiteHeader() {
     </nav>
   );
 }
-
