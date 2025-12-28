@@ -1,10 +1,10 @@
-"use client";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 import {
   ChartBarIncreasingIcon,
   Database,
@@ -12,111 +12,67 @@ import {
   IdCard,
 } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
 
-export default function Features() {
-  type ImageKey = "item-1" | "item-2" | "item-3" | "item-4";
-  const [activeItem, setActiveItem] = useState<ImageKey>("item-1");
-
-
-
+export default function Features({ className }: { className?: string }) {
   return (
-    <section className="py-12 md:py-20 lg:py-32">
+    <section className={cn("py-24", className)}>
       <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]"></div>
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
         <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
-          <h2 className="text-balance text-4xl font-semibold lg:text-6xl">
-            Your Next-Level Growth Goals
+          <h2 className="text-balance text-4xl font-semibold">
+            Partners, Not Just Vendors
           </h2>
-          <p className="text-muted-foreground">
-            Every ambitious business is aiming for these outcomes. We provide
-            the strategy to get you there.
-          </p>
+          <p>We don't just run your ads; we obsess over your P&L.</p>
         </div>
 
         <div className="grid gap-12 sm:px-12 md:grid-cols-2 lg:gap-20 lg:px-0">
-          <Accordion
-            type="single"
-            value={activeItem}
-            onValueChange={(value) => setActiveItem(value as ImageKey)}
-            className="w-full"
-          >
+          <Accordion type="single" className="w-full" defaultValue="item-1">
             <AccordionItem value="item-1">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
                   <Database className="size-4" />
-                  Database Visualization
+                  Profit Over ROAS
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire to the APIs and platforms helping developers and
-                businesses innovate.
+                We ignore vanity ROAS and optimize for Contribution Margin,
+                ensuring every dollar adds to your bottom line.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
                   <Fingerprint className="size-4" />
-                  Advanced Authentication
+                  Senior-Led Strategy
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire to the APIs and platforms helping developers and
-                businesses innovate.
+                No juniors. You work directly with veteran strategists who have
+                successfully scaled brands like yours.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
                   <IdCard className="size-4" />
-                  Identity Management
+                  Creative That Converts
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire to the APIs and platforms helping developers and
-                businesses innovate.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>
-                <div className="flex items-center gap-2 text-base">
-                  <ChartBarIncreasingIcon className="size-4" />
-                  Analytics Dashboard
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire to the APIs and platforms helping developers and
-                businesses innovate.
+                We combine hard data with high-performance creative production
+                to stop the scroll and drive revenue.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
 
-          <div className="relative grid place-content-center">
-            <div className="relative w-[calc(3/4*100%+3rem)] rounded-2xl">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`${activeItem}-id`}
-                  initial={{ opacity: 0, y: 6, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
-                  className="w-full h-full object-cover dark:mix-blend-lighten"
-                >
-                  <Image
-                    src="/images/decorative/decorate-1.png"
-                    alt="Your Next-Level Growth Goals"
-                    className="w-full h-full"
-                    width={1207}
-                    height={929}
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          <div className="bg-background relative w-full rounded-2xl shadow-md">
+            <Image
+              src="/charts.png"
+              className="size-full object-cover object-left-top dark:mix-blend-lighten"
+              alt="charts"
+              width={1207}
+              height={929}
+            />
           </div>
         </div>
       </div>
