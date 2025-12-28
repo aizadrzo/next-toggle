@@ -1,16 +1,16 @@
 "use client";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import { Check, Mail, Menu, SendHorizonal, X } from "lucide-react";
+import { Check, Star, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { AvatarCircles } from "./ui/avatar-circles";
 
 const menuItems = [
-  { name: "Features", href: "#" },
-  { name: "Solution", href: "#" },
-  { name: "Pricing", href: "#" },
-  { name: "About", href: "#" },
+  { name: "Our Work", href: "#our-work" },
+  { name: "Services", href: "#services" },
+  { name: "About", href: "#about" },
 ];
 
 export default function HeroSection() {
@@ -22,7 +22,7 @@ export default function HeroSection() {
           data-state={menuState && "active"}
           className="fixed z-20 w-full border-b border-dashed bg-white backdrop-blur md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent"
         >
-          <div className="m-auto max-w-5xl px-6">
+          <div className="m-auto max-w-6xl px-6">
             <div className="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
               <div className="flex w-full justify-between lg:w-auto">
                 <Link
@@ -51,6 +51,14 @@ export default function HeroSection() {
                         <Link
                           href={item.href}
                           className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.querySelector(item.href);
+                            if (element) {
+                              element.scrollIntoView({ behavior: "smooth" });
+                              setMenuState(false);
+                            }
+                          }}
                         >
                           <span>{item.name}</span>
                         </Link>
@@ -60,15 +68,19 @@ export default function HeroSection() {
                 </div>
 
                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:border-l lg:pl-6">
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="#">
-                      <span>Login</span>
-                    </Link>
-                  </Button>
-
                   <Button asChild size="sm">
-                    <Link href="#">
-                      <span>Login</span>
+                    <Link
+                      href="#contact"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const element = document.querySelector("#contact");
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" });
+                          setMenuState(false);
+                        }
+                      }}
+                    >
+                      <span>Contact</span>
                     </Link>
                   </Button>
                 </div>
@@ -80,7 +92,7 @@ export default function HeroSection() {
 
       <main>
         <section className="overflow-hidden">
-          <div className="relative mx-auto max-w-5xl px-6 py-28 lg:py-20">
+          <div className="relative mx-auto max-w-6xl px-6 py-28 lg:py-20">
             <div className="lg:flex lg:items-center lg:gap-12">
               <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
                 <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">
@@ -92,33 +104,55 @@ export default function HeroSection() {
                 </p>
 
                 <div>
-                  <form
-                    action=""
-                    className="mx-auto my-10 max-w-sm lg:my-12 lg:ml-0 lg:mr-auto"
-                  >
-                    <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.75rem)] border pr-3 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
-                      <Mail className="text-caption pointer-events-none absolute inset-y-0 left-5 my-auto size-5" />
-
-                      <input
-                        placeholder="Your mail address"
-                        className="h-14 w-full bg-transparent pl-12 focus:outline-none"
-                        type="email"
+                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col md:flex-row gap-4 items-center`">
+                    <Button asChild size="lg">
+                      <Link
+                        href="#contact"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const element = document.querySelector("#contact");
+                          if (element) {
+                            element.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }}
+                      >
+                        <span>Get Started</span>
+                      </Link>
+                    </Button>
+                    <div className="flex items-center gap-2">
+                      <AvatarCircles
+                        avatarUrls={[
+                          {
+                            imageUrl: "/images/team/jp-profile.png",
+                          },
+                          {
+                            imageUrl: "/images/team/sb-profile.png",
+                          },
+                          {
+                            imageUrl: "/images/team/vs-profile.png",
+                          },
+                          {
+                            imageUrl: "/images/team/zs-profile.png",
+                          },
+                          {
+                            imageUrl: "/images/team/yy-profile.png",
+                          },
+                        ]}
                       />
-
-                      <div className="md:pr-1.5 lg:pr-0">
-                        <Button
-                          aria-label="submit"
-                          className="rounded-(--radius)"
-                        >
-                          <span className="hidden md:block">Get Started</span>
-                          <SendHorizonal
-                            className="relative mx-auto size-5 md:hidden"
-                            strokeWidth={2}
-                          />
-                        </Button>
+                      <div className="flex flex-col">
+                        <div className="flex text-yellow-500 mb-1 gap-0.5">
+                          <Star className="w-5 h-5 fill-current" />
+                          <Star className="w-5 h-5 fill-current" />
+                          <Star className="w-5 h-5 fill-current" />
+                          <Star className="w-5 h-5 fill-current" />
+                          <Star className="w-5 h-5 fill-current" />
+                        </div>
+                        <p className="text-gray-700 dark:text-gray-300 text-sm">
+                          Get a free brand audit
+                        </p>
                       </div>
                     </div>
-                  </form>
+                  </div>
 
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
@@ -126,7 +160,7 @@ export default function HeroSection() {
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300">
-                        Profit Over ROAS
+                        We track Contribution Margin, not just ROAS.
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -134,7 +168,7 @@ export default function HeroSection() {
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300">
-                        Senior-Led Strategy
+                        Creative, Media, and Retention under one roof.
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -142,7 +176,7 @@ export default function HeroSection() {
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300">
-                        Creative That Converts
+                        Direct access to directors, no junior managers.
                       </span>
                     </div>
                   </div>

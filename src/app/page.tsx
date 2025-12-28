@@ -9,10 +9,16 @@ export default function Home() {
     <div className="min-h-screen text-foreground">
       <HeroSection />
       <div className="mx-auto max-w-6xl gap-32 flex flex-col pt-24">
-        <CaseStudies2 className="py-0" />
-        <Feature2 className="py-0" />
-        <IntegrationsThree className="py-0" />
-        <div className="mx-auto px-6 pb-24">
+        <section id="our-work">
+          <CaseStudies2 className="py-0" />
+        </section>
+        <section id="about">
+          <Feature2 className="py-0" />
+        </section>
+        <section id="services">
+          <IntegrationsThree className="py-0" />
+        </section>
+        <div className="mx-auto px-6 pb-24" id="contact">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Left Column */}
             <div className="lg:col-span-5 space-y-10 pt-4">

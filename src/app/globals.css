@@ -62,7 +62,7 @@
   --popover-foreground: 222 47% 11%;
 
   /* Primary: Blue 600 #2563eb -> 221 83% 53% */
-  --primary: 221 83% 53%; 
+  --primary: 221 83% 53%;
   --primary-foreground: 210 40% 98%;
 
   /* Secondary: Slate 100 #f1f5f9 -> 210 40% 96% (using as button secondary bg) */
@@ -141,6 +141,11 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 body {
   @apply bg-background text-foreground font-sans antialiased transition-colors duration-300;
 }
@@ -153,4 +158,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
