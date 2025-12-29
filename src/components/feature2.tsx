@@ -1,17 +1,20 @@
 import { cn } from "@/lib/utils";
-import { User, Cpu, Save, ArrowRight } from "lucide-react";
+import { ChartSpline, CircleDollarSign, Save, HandCoins } from "lucide-react";
 import { Card } from "./ui/card";
 import { NumberTicker } from "./ui/number-ticker";
+import Image from "next/image";
 
 const Feature2 = ({ className }: { className?: string }) => {
   return (
     <section className={cn("py-32", className)}>
       <div className="container px-6">
         <div className="grid items-center gap-8 md:gap-16 lg:grid-cols-2">
-          <img
-            src="/images/decorative/decorative-1.png"
+          <Image
+            src="/images/decorative/decorative-3.png"
             alt="placeholder hero"
             className=" w-full h-full rounded-md object-cover bg-zinc-50 shadow-sm"
+            width={500}
+            height={500}
           />
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h2 className="my-6 mt-0 text-4xl font-semibold text-balance lg:text-5xl">
@@ -32,7 +35,7 @@ const Feature2 = ({ className }: { className?: string }) => {
           {/* Card 1 */}
           <Card className="rounded-xl p-8 bg-zinc-50 border-none">
             <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center">
-              <User className="text-white w-6 h-6" />
+              <HandCoins className="text-white w-6 h-6" />
             </div>
             <h3 className="text-6xl sm:text-7xl font-bold text-foreground tracking-tighter">
               <NumberTicker value={50} />
@@ -43,7 +46,7 @@ const Feature2 = ({ className }: { className?: string }) => {
                 Ad Spend Managed
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Increase in Lead Generation
+                Focuses on scale and experience
               </p>
             </div>
           </Card>
@@ -51,7 +54,7 @@ const Feature2 = ({ className }: { className?: string }) => {
           {/* Card 2 */}
           <Card className="rounded-xl p-8 bg-zinc-50 border-none">
             <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center">
-              <Cpu className="text-white w-6 h-6" />
+              <ChartSpline className="text-white w-6 h-6" />
             </div>
             <h3 className="text-6xl sm:text-7xl font-bold text-foreground tracking-tighter">
               <NumberTicker value={25} />%
@@ -61,7 +64,7 @@ const Feature2 = ({ className }: { className?: string }) => {
                 Improvement in Conversion Rates
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Conversion rates improvement
+                Focuses on efficiency and optimization
               </p>
             </div>
           </Card>
@@ -69,17 +72,17 @@ const Feature2 = ({ className }: { className?: string }) => {
           {/* Card 3 */}
           <Card className="rounded-xl p-8 bg-zinc-50 border-none">
             <div className="w-12 h-12 bg-zinc-900 rounded-lg flex items-center justify-center">
-              <Save className="text-white w-6 h-6" />
+              <CircleDollarSign className="text-white w-6 h-6" />
             </div>
             <h3 className="text-6xl sm:text-7xl font-bold text-foreground tracking-tighter">
               <NumberTicker value={21} />%
             </h3>
             <div className="mt-auto">
               <h3 className="text-xl font-semibold text-foreground w-2/3 mb-4">
-                Reduction in Outreach Effort
+                Average Return on Ad Spend
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Average Return on Ad Spend
+                Focuses on profitability and returns
               </p>
             </div>
           </Card>
