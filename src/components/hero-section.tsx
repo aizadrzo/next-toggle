@@ -1,5 +1,4 @@
 "use client";
-import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Check, Star, Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -20,7 +19,7 @@ export default function HeroSection() {
       <header>
         <nav
           data-state={menuState && "active"}
-          className="fixed z-20 w-full border-b border-dashed bg-white backdrop-blur md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent"
+          className="fixed z-20 w-full border-b bg-white backdrop-blur md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent"
         >
           <div className="m-auto max-w-6xl px-6">
             <div className="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
@@ -30,7 +29,13 @@ export default function HeroSection() {
                   aria-label="home"
                   className="flex items-center space-x-2"
                 >
-                  <Logo />
+                  <Image
+                    src="/images/brand/logo-light.svg"
+                    alt="Logo"
+                    width={100}
+                    height={40}
+                    className="object-contain"
+                  />
                 </Link>
 
                 <button
