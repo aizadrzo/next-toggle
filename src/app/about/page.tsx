@@ -33,12 +33,6 @@ export const metadata: Metadata = {
       "Learn about Toggle Solutions, a people-first digital marketing agency helping SMEs and startups grow through smart strategy and creative execution.",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "About Us | Toggle Solutions",
-    description:
-      "Learn about Toggle Solutions, a people-first digital marketing agency helping SMEs and startups grow through smart strategy and creative execution.",
-  },
 };
 
 export default function AboutPage() {
