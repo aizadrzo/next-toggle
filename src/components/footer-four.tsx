@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const links = [
   { name: "Our Work", href: "#our-work" },
-  { name: "Services", href: "#services" },
   { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
 ];
 
 export default function FooterSection() {

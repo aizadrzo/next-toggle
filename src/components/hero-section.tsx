@@ -8,8 +8,8 @@ import { AvatarCircles } from "./ui/avatar-circles";
 
 const menuItems = [
   { name: "Our Work", href: "#our-work" },
-  { name: "Services", href: "#services" },
   { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
 ];
 
 export default function HeroSection() {
