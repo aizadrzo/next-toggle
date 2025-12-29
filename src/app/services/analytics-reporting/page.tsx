@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
 const transitionVariants: Variants = {
   item: {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
     // @ts-expect-error - hidden is not a valid property in the Variants type
     hidden: {
       opacity: 0,

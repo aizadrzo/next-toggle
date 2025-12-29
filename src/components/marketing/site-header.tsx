@@ -1,9 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-// Container replaced with standard Tailwind classes
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Menu,
+  ArrowRight,
+  Code,
+  TrendingUp,
+  FileText,
+  ChevronDown,
+} from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,209 +19,196 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+  ListItem,
 } from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import Image from "next/image";
-import { Menu } from "lucide-react";
-
-const navigation = [
-  { name: "Services", href: "/services" },
-  { name: "Work", href: "/work" },
-  { name: "About", href: "/about" },
-  // { name: "Insights", href: "/insights" },
-  { name: "Contact", href: "/contact" },
-];
+import { cn } from "@/lib/utils";
 
 const services = [
   {
-    title: "Performance Marketing",
-    href: "/services/performance-marketing",
-    description: "Google, Meta, TikTok ads that actually convert.",
-  },
-  {
-    title: "Content Marketing",
-    href: "/services/content-marketing",
-    description: "Strategic content that builds trust and drives action.",
-  },
-  {
-    title: "Branding",
-    href: "/services/branding",
-    description: "Visual identity that resonates with your audience.",
-  },
-  {
     title: "Web Development",
     href: "/services/web-development",
-    description: "Fast, beautiful websites that convert visitors.",
+    description:
+      "Custom websites and applications built with modern technologies.",
+    icon: Code,
   },
   {
-    title: "Email Marketing",
-    href: "/services/email-marketing",
-    description: "Email campaigns that people actually read.",
+    title: "Performance Marketing",
+    href: "/services/performance-marketing",
+    description: "Data-driven campaigns to maximize ROI and growth.",
+    icon: TrendingUp,
   },
   {
-    title: "Analytics & Reporting",
-    href: "/services/analytics-reporting",
-    description: "Clear insights on what's working.",
+    title: "Content Strategy",
+    href: "/services/content-strategy",
+    description: "Strategic content that engages and converts your audience.",
+    icon: FileText,
   },
 ];
 
+const navigation = [
+  { name: "Work", href: "/work" },
+  { name: "About", href: "/about" },
+];
+
 export function SiteHeader() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#2F2F2F] bg-black/80 backdrop-blur-sm supports-[backdrop-filter]:bg-black/60">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav
-          className="flex h-16 items-center justify-between"
-          role="navigation"
-          aria-label="Main navigation"
-        >
+    <nav className="fixed w-full z-50 bg-background/90 backdrop-blur-md border-b border-border">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex lg:flex-1">
-            <Link
-              href="/"
-              className="-m-1.5 p-1.5"
-              aria-label="Toggle Solutions homepage"
-            >
-              <Image
-                src="images/brand/logo.svg"
-                alt="Toggle Solutions"
-                width={100}
-                height={24}
-              />
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white font-bold text-lg group-hover:opacity-90 transition-opacity">
+                T
+              </div>
+              <span className="font-bold text-xl text-foreground tracking-tight">
+                Toggle Solutions
+              </span>
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-center">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                  >
-                    Services
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {services.map((service) => (
-                        <NavigationMenuLink key={service.title} asChild>
-                          <Link
+          {/* Right Actions & Navigation */}
+          <div className="flex items-center gap-8">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center justify-center">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className="text-muted-foreground hover:text-primary font-medium bg-transparent">
+                      Services
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                        <li className="row-span-3">
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-500 to-indigo-600 p-6 no-underline outline-none focus:shadow-md"
+                              href="/services"
+                            >
+                              <div className="h-6 w-6 text-white mb-2">
+                                <Code className="h-6 w-6" />
+                              </div>
+                              <div className="mb-2 mt-4 text-lg font-medium text-white">
+                                Our Services
+                              </div>
+                              <p className="text-sm leading-tight text-white/90">
+                                Comprehensive digital solutions tailored to your
+                                business needs.
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        {services.map((service) => (
+                          <ListItem
+                            key={service.title}
+                            title={service.title}
                             href={service.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            icon={service.icon}
                           >
-                            <div className="text-sm font-medium leading-none">
-                              {service.title}
-                            </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              {service.description}
-                            </p>
-                          </Link>
+                            {service.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  {navigation.map((item) => (
+                    <NavigationMenuItem key={item.name}>
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink
+                          className={cn(
+                            navigationMenuTriggerStyle(),
+                            "text-muted-foreground hover:text-primary font-medium bg-transparent"
+                          )}
+                        >
+                          {item.name}
                         </NavigationMenuLink>
-                      ))}
+                      </Link>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+
+            <Button
+              asChild
+              className="hidden md:inline-flex rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/50 shadow-none"
+            >
+              <Link href="/contact" className="flex items-center gap-2">
+                Get in Touch
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+
+            {/* Mobile Menu Trigger */}
+            <div className="flex md:hidden">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <div className="flex flex-col gap-4 mt-6">
+                    {/* Mobile Services Accordion-style */}
+                    <div className="space-y-4">
+                      <div
+                        className="flex items-center justify-between text-lg font-medium text-foreground cursor-pointer"
+                        onClick={() =>
+                          setMobileServicesOpen(!mobileServicesOpen)
+                        }
+                      >
+                        Services
+                        <ChevronDown
+                          className={cn(
+                            "w-4 h-4 transition-transform",
+                            mobileServicesOpen ? "rotate-180" : ""
+                          )}
+                        />
+                      </div>
+
+                      {mobileServicesOpen && (
+                        <div className="pl-4 space-y-3 border-l-2 border-border ml-2">
+                          {services.map((service) => (
+                            <Link
+                              key={service.title}
+                              href={service.href}
+                              className="block text-sm text-muted-foreground hover:text-primary"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                {navigation.slice(1).map((item) => (
-                  <NavigationMenuItem key={item.name}>
-                    <NavigationMenuLink asChild>
+
+                    {navigation.map((item) => (
                       <Link
+                        key={item.name}
                         href={item.href}
-                        className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-[#1A1A1A] hover:text-white focus:bg-[#1A1A1A] focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-[#A0A0A0]"
+                        className="text-lg font-medium text-foreground hover:text-primary"
+                        onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.name}
                       </Link>
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Button asChild>
-              <Link href="/contact">Book a discovery call</Link>
-            </Button>
-          </div>
-
-          {/* Mobile menu */}
-          <div className="flex lg:hidden">
-            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <button
-                  type="button"
-                  className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground"
-                  aria-label="Open main menu"
-                  aria-expanded={mobileMenuOpen}
-                  aria-controls="mobile-menu"
-                >
-                  <Menu className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-full sm:max-w-sm">
-                <SheetHeader>
-                  <SheetTitle className="text-left">
+                    ))}
                     <Link
-                      href="/"
-                      className="text-2xl font-bold text-white"
-                      aria-label="Toggle Solutions homepage"
+                      href="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
-                      Toggle
+                      <Button className="w-full mt-4">Get in Touch</Button>
                     </Link>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="mt-6 flow-root" id="mobile-menu">
-                  <div className="-my-6 divide-y divide-gray-500/10">
-                    <div className="space-y-2 py-6">
-                      {/* Services dropdown for mobile */}
-                      <div className="space-y-2">
-                        <div className="text-sm font-semibold text-muted-foreground px-3">
-                          Services
-                        </div>
-                        {services.map((service) => (
-                          <Link
-                            key={service.title}
-                            href={service.href}
-                            className="-mx-3 block rounded-lg px-3 py-2 text-sm leading-7 text-foreground hover:bg-gray-50 focus:bg-gray-50 focus:outline-none"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {service.title}
-                          </Link>
-                        ))}
-                      </div>
-
-                      {/* Other navigation items */}
-                      {navigation.slice(1).map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-foreground hover:bg-gray-50 focus:bg-gray-50 focus:outline-none"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                    <div className="py-6">
-                      <Button asChild className="w-full">
-                        <Link href="/contact">Book a discovery call</Link>
-                      </Button>
-                    </div>
                   </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
-        </nav>
+        </div>
       </div>
-    </header>
+    </nav>
   );
 }

@@ -1,279 +1,228 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-// Container replaced with standard Tailwind classes
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import Link from "next/link";
-import { Target, CheckCircle, TrendingUp } from "lucide-react";
-import { deliverables, process, useCases, faqs } from "./data";
-import { CustomHero } from "@/components/marketing/custom-hero";
-import { AnimatedSection, transitionVariants } from "@/components/marketing/animated-section";
-import { AnimatedGroup } from "@/components/ui/animated-group";
-import { TextEffect } from "@/components/ui/text-effect";
+import { ArrowRight, TrendingUp, MousePointerClick, Share2, LineChart, Check } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Performance Marketing Services | Toggle Solutions",
-  description:
-    "Drive real business results with our performance marketing campaigns. Google, Meta, TikTok ads that actually convert. Book a discovery call.",
-  keywords: [
-    "performance marketing",
-    "google ads",
-    "facebook ads",
-    "tiktok ads",
-    "conversion optimization",
-    "ROI",
-  ],
-  openGraph: {
-    title: "Performance Marketing Services | Toggle Solutions",
-    description:
-      "Drive real business results with our performance marketing campaigns. Google, Meta, TikTok ads that actually convert.",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Performance Marketing Services | Toggle Solutions",
-    description:
-      "Drive real business results with our performance marketing campaigns. Google, Meta, TikTok ads that actually convert.",
-  },
+  title: "Performance Marketing - Toggle Solutions",
 };
 
 export default function PerformanceMarketingPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background transition-colors duration-300">
       {/* Hero Section */}
-      <CustomHero
-        badge="Performance Marketing"
-        title="Ads that actually"
-        titleHighlight="convert"
-        description="We create and optimize performance marketing campaigns that drive real business results. No vanity metrics, just measurable growth for your business."
-        primaryCTA={{
-          text: "Get started",
-          href: "/contact",
-        }}
-        secondaryCTA={{
-          text: "See case studies",
-          href: "/work",
-        }}
-      />
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-50 dark:bg-slate-900/20">
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-400/10 blur-3xl dark:bg-blue-600/10"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-500/5"></div>
+        
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
+          <div className="w-20 h-20 mb-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20 transform rotate-3">
+            <TrendingUp className="w-10 h-10 text-white" />
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
+            Performance <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400">Marketing</span>
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+            Data-driven strategies designed to maximize your ROI and accelerate business growth across all digital channels.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link 
+              href="/contact" 
+              className="px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
+            >
+              Start Growing <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link 
+              href="#portfolio" 
+              className="px-8 py-3.5 rounded-full border border-border font-medium hover:bg-white dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+            >
+              View Case Studies
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      {/* Overview Section */}
-      <section className="py-24 bg-muted/50">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl">
-            <div className="grid gap-12 lg:grid-cols-2 items-center">
-              <AnimatedGroup variants={transitionVariants}>
-                <TextEffect
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  as="h2"
-                  className="text-3xl font-bold tracking-tight text-foreground mb-6">
-                  What is performance marketing?
-                </TextEffect>
-                <div className="space-y-4 text-muted-foreground">
-                  <p>
-                    Performance marketing is all about measurable results.
-                    Unlike traditional advertising, every dollar spent is
-                    tracked and optimized for specific business outcomes like
-                    leads, sales, or signups.
-                  </p>
-                  <p>
-                    We focus on platforms like Google Ads, Meta (Facebook &
-                    Instagram), and TikTok Ads to reach your target audience
-                    with precision and measure every interaction.
-                  </p>
-                  <p>
-                    Our approach combines strategic targeting, compelling
-                    creative, and continuous optimization to maximize your
-                    return on investment.
+      {/* Services Section */}
+      <section className="py-24 bg-background">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground">Comprehensive Marketing Solutions</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              From targeted ad campaigns to complete funnel optimization, we deliver measurable results that impact your bottom line.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Service 1 */}
+            <div className="group relative bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-border">
+              <div className="w-14 h-14 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <MousePointerClick className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-foreground">Paid Search (PPC)</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                Capture high-intent leads exactly when they are searching for your services. We manage and optimize campaigns for maximum conversion efficiency.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center text-sm text-muted-foreground">
+                  <Check className="w-4 h-4 text-primary mr-2" /> Google Ads Management
+                </li>
+                <li className="flex items-center text-sm text-muted-foreground">
+                  <Check className="w-4 h-4 text-primary mr-2" /> Remarketing Campaigns
+                </li>
+              </ul>
+            </div>
+
+            {/* Service 2 */}
+            <div className="group relative bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-border">
+              <div className="w-14 h-14 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                <Share2 className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-foreground">Social Media Ads</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                Engage your ideal audience on the platforms they use daily. We create compelling visual creatives and laser-focused targeting strategies.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center text-sm text-muted-foreground">
+                  <Check className="w-4 h-4 text-indigo-600 mr-2" /> Meta (Facebook/Instagram)
+                </li>
+                <li className="flex items-center text-sm text-muted-foreground">
+                  <Check className="w-4 h-4 text-indigo-600 mr-2" /> LinkedIn B2B Targeting
+                </li>
+              </ul>
+            </div>
+
+            {/* Service 3 */}
+            <div className="group relative bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-border">
+              <div className="w-14 h-14 rounded-xl bg-sky-50 dark:bg-sky-900/20 flex items-center justify-center text-sky-600 mb-6 group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
+                <LineChart className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-foreground">SEO & Analytics</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                Build long-term organic authority and make informed decisions with deep data analysis. We turn traffic into revenue through optimization.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center text-sm text-muted-foreground">
+                  <Check className="w-4 h-4 text-sky-600 mr-2" /> Technical SEO & Content
+                </li>
+                <li className="flex items-center text-sm text-muted-foreground">
+                  <Check className="w-4 h-4 text-sky-600 mr-2" /> Conversion Rate Optimization
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-24 bg-slate-50 dark:bg-slate-900/50">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight mb-4 text-foreground">Client Portfolio</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Explore some of our successful campaigns and see how we've helped brands scale their revenue.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Project 1 */}
+            <div className="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU1W7ghZ_1DGAAu6Im6O9xTY628VFj65bYNue_E-WEpi8g1utbV_jU2vVD7sX0CmsAqZVJf2Ls5lopamLToM-EhjXU0UZ8yEgCV5PAmEJPW_PQlC0oThb5kK-IKuDClTiGp2-b1u5ksEJ7u4UZr61nJG_4nJOoG10oa_BMwvh72qEIs7PqJmvG6dpuLElWFZNWRqJE-EapJO95-5XwieBeXtI_5EE30Z-F0Cks4lGZ-_n-xwemuHraoOn_G_X03woXmYduOjFhaA" 
+                  alt="FinTech Dashboard Project" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="mb-4">
+                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">FinTech</span>
+                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">Nova Financial</h3>
+                  <p className="text-sm text-muted-foreground mt-2 line-clamp-3">
+                    Achieved 200% ROI within 3 months through a targeted LinkedIn Ads campaign and a thought-leadership content syndication strategy.
                   </p>
                 </div>
-              </AnimatedGroup>
-              <div className="relative">
-                <AnimatedGroup variants={transitionVariants}>
-                  <div className="aspect-square rounded-2xl bg-primary/10 flex items-center justify-center">
-                    <Target className="h-24 w-24 text-primary" />
-                  </div>
-                </AnimatedGroup>
+                <div className="mt-auto flex gap-2 flex-wrap">
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">LinkedIn Ads</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Lead Gen</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Deliverables Section */}
-      <section className="py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              What you get
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Everything you need to run successful performance marketing
-              campaigns
-            </p>
-          </div>
-          <AnimatedSection>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {deliverables.map((deliverable, index) => (
-                <Card key={index} className="text-center">
-                  <CardContent className="pt-6">
-                    <div className="flex items-center justify-center mb-4">
-                      <CheckCircle className="h-8 w-8 text-primary" />
-                    </div>
-                    <p className="font-medium text-foreground">{deliverable}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24 bg-muted/50">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Our process
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              A proven approach to performance marketing success
-            </p>
-          </div>
-          <div className="mx-auto max-w-4xl">
-            <AnimatedSection>
-              <div className="space-y-8">
-                {process.map((item, index) => (
-                  <div key={index} className="flex gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">
-                        {item.step}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
+            {/* Project 2 */}
+            <div className="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi7F71jTOrIOMO4oUfnZJjWEiqzGW4z8sfb2cIBmr2lpBXXuV15yZrO55I7_nQpGuXIMbQrbmqmLD-wZdt8g4_V0cftDnARi0R56Oh66OdEttmyBx5GDbGYFvyRkvdyzlUGm-BKH1EBJj-dBdMyfrk-kUlyKR6aJ_zh4D5QJnO_cpy1D5cHLvWgROwR_vJwagPmX4OqHaXWrEsbHrOBiyJdT8QyPEyOMaUY0Gioc24EgJaDSkSvLx7sF9Drohh3zGsphVeqSentQ" 
+                  alt="E-Commerce Fashion Store Project" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Real results
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Here's how we've helped businesses across different industries
-              grow
-            </p>
-          </div>
-          <AnimatedSection>
-            <div className="grid gap-8 md:grid-cols-3">
-              {useCases.map((useCase, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <div className="flex items-center gap-2 mb-2">
-                      <TrendingUp className="h-5 w-5 text-primary" />
-                      <Badge variant="outline">{useCase.industry}</Badge>
-                    </div>
-                    <CardTitle className="text-lg">Challenge</CardTitle>
-                    <CardDescription>{useCase.challenge}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-1">
-                          Solution
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          {useCase.solution}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-1">
-                          Result
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          {useCase.result}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="mb-4">
+                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">E-Commerce</span>
+                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">Lumina Fashion</h3>
+                  <p className="text-sm text-muted-foreground mt-2 line-clamp-3">
+                    Scaled monthly revenue by 150% using dynamic product ads on Instagram and automated email retargeting workflows.
+                  </p>
+                </div>
+                <div className="mt-auto flex gap-2 flex-wrap">
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Facebook Ads</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Email Automation</span>
+                </div>
+              </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 bg-muted/50">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Frequently asked questions
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Everything you need to know about our performance marketing
-                services
-              </p>
+            {/* Project 3 */}
+            <div className="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZs871StUwJ7s4dx4wjTD1JdDO2zaO6K5v3k-_l-WJuGfSHfyQbr9Yp3COelWmf5WFgyxOnHgQp6pyu9IKxfWxknSXg00WbJZPb_YO1fwPQTHKNxzosABUiv-f5eqGKV9R-Pb0a61DSkbog2361CitzfAOoumJJ2VtYCxiJLffYuY-7AKoMmA0Imi2ZeZr_oOxcQ7oilWrbLsFfdsDxXydBkjL-B_xUWFpU3-F0csN4BZetzW1mep8aeijM60Skmuo6szMKWxtjg" 
+                  alt="Healthcare Mobile App Project" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="mb-4">
+                  <span className="text-xs font-semibold tracking-wide text-primary uppercase">Healthcare</span>
+                  <h3 className="text-xl font-bold mt-1 text-foreground group-hover:text-primary transition-colors">MediConnect</h3>
+                  <p className="text-sm text-muted-foreground mt-2 line-clamp-3">
+                    Increased new patient bookings by 40% utilizing local SEO optimization, Google Maps ranking strategies, and search ads.
+                  </p>
+                </div>
+                <div className="mt-auto flex gap-2 flex-wrap">
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Local SEO</span>
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs text-muted-foreground border border-border">Google Ads</span>
+                </div>
+              </div>
             </div>
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Ready to grow with performance marketing?
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Let's discuss your goals and see how we can help you achieve them.
-              Book a free discovery call to get started.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg">
-                <Link href="/contact">Book a discovery call</Link>
-              </Button>
-              <Button variant="outline" asChild size="lg">
-                <Link href="/services">View all services</Link>
-              </Button>
+      <section className="py-20 bg-background border-t border-border">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-primary to-blue-600 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-white/10 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-black/10 blur-3xl"></div>
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+              <div className="max-w-2xl">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Scale Your Business?</h2>
+                <p className="text-blue-100 text-lg">
+                  Let's discuss your growth targets and design a performance marketing strategy that delivers real ROI.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <Link 
+                  href="/contact" 
+                  className="px-8 py-4 rounded-full bg-white text-primary font-bold text-lg hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
+                >
+                  Contact Us <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

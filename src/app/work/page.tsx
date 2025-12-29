@@ -1,230 +1,191 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
+import { ArrowRight } from "lucide-react";
+
 export default function WorkPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-white dark:bg-slate-950 font-sans antialiased selection:bg-blue-100 selection:text-blue-900">
+      
       {/* Hero Section */}
-      <section className="relative py-24 sm:py-32">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Real results for{" "}
-              <span className="text-primary">real businesses</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              See how we've helped SMEs and startups grow through smart
-              strategy, data-driven campaigns, and creative execution.
-            </p>
-          </div>
+      <section className="pt-48 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50/50 dark:from-slate-950 dark:to-slate-900/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 leading-tight">
+            Real results for <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+              real businesses
+            </span>
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            See how we've helped SMEs and startups grow through smart strategy,
+            data-driven campaigns, and creative execution.
+          </p>
         </div>
       </section>
 
-      {/* Featured Case Studies */}
-      <section className="py-16">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
-            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
-              <Image
-                src="/images/case-studies/unitar-ad.png"
-                alt="placeholder"
-                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
-                width={300}
-                height={300}
-              />
-              <div className="flex h-full flex-col justify-between gap-10">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">UNITAR International University</h3>
-                  <p className="text-muted-foreground">
-                    Scaled student leads through data-driven, multi-channel
-                    performance campaigns — generating 32,000+ qualified leads
-                    and reducing CPL by 47% in just 4 months.
-                  </p>
-                </div>
+      {/* Case Study Grid */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            {/* Case Study 1 */}
+            <div className="group flex flex-col h-full">
+              <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-900 mb-6 border border-border shadow-sm">
+                <img
+                  alt="Fintech Dashboard"
+                  className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Axo1EHy8qvl1edlJQVAwRbYjuaf6hokJJg88FEQoknBYY6yJK8ut4fVdW9Yd7VizYPl6bw6v4EVm3ERMO0M5UCv9nFSKqzCtO2jROaMjKwRKbY0FL2-mEi2lhr28N22fR_FS7JkdP_QzmUhZ_IhSM00q6O-XE5C1EDnvhcKVt1GpaMK5xbydmDL3tchLIN1S6SlNeF2553vUWrZGtVu8RgITt9wXLNwm01_Y2skW9wkPrlBGQVktOVJqTlK9ugWtCESpVIUk4w"
+                />
               </div>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">
+                  SaaS Platform
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  6 months timeline
+                </span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                FinTrack Analytics Dashboard
+              </h3>
+              <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
+                A complete overhaul of a legacy financial tracking platform. We
+                improved data visualization speeds by 40% and redesigned the UX
+                for better accessibility.
+              </p>
+              <Link
+                href="#"
+                className="inline-flex items-center text-primary font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors mt-auto"
+              >
+                View Case Study{" "}
+                <ArrowRight className="w-[18px] h-[18px] ml-1" />
+              </Link>
             </div>
-            <div className="flex gap-10 self-center lg:flex-col">
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  32K+
-                </p>
-                <p className="text-muted-foreground">Leads Generated</p>
+
+            {/* Case Study 2 */}
+            <div className="group flex flex-col h-full">
+              <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-900 mb-6 border border-border shadow-sm">
+                <img
+                  alt="Meeting Room"
+                  className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRR58mlM7ZEP8VHoM-X9TiFYW0vNk8eQUsy3rPy8CebXYcJo919FTu9hu-FldP9QPh4uS8wscB97aha1PtRmLOOEemFqZfIB9OqS29NigYvDH5mt84V63-EytLoys8yYktB6OlnSQgvMqnO-0PJaHA9FwroC30AkFNCowqBdjCAjZQqHGZPVdXZwk_loF0buiGG8zSTemTRU_QP2xUsIjkSVnvvG6G6mPq6AMQqlWRPeTmSoUTJ7GC7c6iioINIJHfY-M0T9NZMQ"
+                />
               </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  47%
-                </p>
-                <p className="text-muted-foreground">CPL Reduction</p>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">
+                  Marketing Strategy
+                </span>
+                <span className="text-sm text-muted-foreground">Ongoing</span>
               </div>
+              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                Growth Campaign for Nexus
+              </h3>
+              <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
+                Implemented a multi-channel digital marketing strategy that
+                increased qualified leads by 150% within the first quarter
+                through targeted PPC and SEO.
+              </p>
+              <Link
+                href="#"
+                className="inline-flex items-center text-primary font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors mt-auto"
+              >
+                View Case Study{" "}
+                <ArrowRight className="w-[18px] h-[18px] ml-1" />
+              </Link>
             </div>
-          </div>
-          <Separator className="my-20" />
-          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
-            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
-              <Image
-                src="/images/case-studies/kithkin-ad.png"
-                alt="placeholder"
-                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
-                width={300}
-                height={300}
-              />
-              <div className="flex h-full flex-col justify-between gap-10">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Kith & Kin</h3>
-                  <p className="text-muted-foreground">
-                    Increase the number of qualified leads via paid advertising
-                    while keeping the cost per lead (CPL) at a sustainable
-                    level.
-                  </p>
-                </div>
+
+            {/* Case Study 3 */}
+            <div className="group flex flex-col h-full">
+              <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-900 mb-6 border border-border shadow-sm">
+                <img
+                  alt="Data Analytics"
+                  className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcBWDEu5yF1EFMWeyjhVWzZqX48dr3e_qBPPYWuCXuh9h4oxvHPUDYE8O4OgcAWqEtQLfYc2p92wTaOC5EgpT8oAwe24qCGEn3bDO3wjbrN8MjvxYbJMn-gsruKvHe30uib7xOhQIFxccm8DCF0pu8CmhG2bxCNRaxb5Mx0sm_5E681_HngtjLXcY_vspoH-Jx9-fkp0pikgBvsRFW-7wRmrmotCru5MAKCz_NxE_jNTU2LrsrTd1ClmJlIzw9ydeUwJHThiTvsw"
+                />
               </div>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">
+                  Web Development
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  3 months timeline
+                </span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                EcoStream E-commerce
+              </h3>
+              <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
+                Developed a custom Shopify storefront with headless architecture
+                to support high-traffic product launches for a sustainable
+                lifestyle brand.
+              </p>
+              <Link
+                href="#"
+                className="inline-flex items-center text-primary font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors mt-auto"
+              >
+                View Case Study{" "}
+                <ArrowRight className="w-[18px] h-[18px] ml-1" />
+              </Link>
             </div>
-            <div className="flex gap-10 self-center lg:flex-col">
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  392%
-                </p>
-                <p className="text-muted-foreground">Leads Generated</p>
+
+            {/* Case Study 4 */}
+            <div className="group flex flex-col h-full">
+              <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-900 mb-6 border border-border shadow-sm">
+                <img
+                  alt="Coding"
+                  className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOeXqCigzfpld5d5JZKiXFnFSht8DdISuNdu1Xni4jmSPTgZGod0QBi4F7j3v5Y1gvL4Pf9lPFNXw3uMLEsofCg4xnwaHCE7OJ-tFk6eckeE_911M4dUXcIqFeU29K-S_I6Osi9JJ_BZifr2zCgKcPPw9VKL2oO0IyUIm91TKW1a3o0uEfkoUe6TahGUY-koLXLAe52ynvGiE0jnfTUy7fwJ0MrupQBIFW-DEfZQwPxtqTXKVEqaK6D3kFbNbpYKozofpBKl57tw"
+                />
               </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  3.8x
-                </p>
-                <p className="text-muted-foreground">ROI Improvement</p>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-100 dark:border-blue-800">
+                  Brand Identity
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  2 months timeline
+                </span>
               </div>
-            </div>
-          </div>
-          <Separator className="my-20" />
-          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
-            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
-              <Image
-                src="/images/case-studies/mahbub-catering-ad.png"
-                alt="placeholder"
-                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
-                width={300}
-                height={300}
-              />
-              <div className="flex h-full flex-col justify-between gap-10">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Restoran Mahbub (Catering)</h3>
-                  <p className="text-muted-foreground">
-                    Curated sales messaging flows across Messenger, Instagram,
-                    and WhatsApp. Generated 300+ message conversations inquiring
-                    about their catering offering.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-10 self-center lg:flex-col">
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  46%
-                </p>
-                <p className="text-muted-foreground">Increased Leads</p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  72%
-                </p>
-                <p className="text-muted-foreground">Across all projects</p>
-              </div>
-            </div>
-          </div>
-          <Separator className="my-20" />
-          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
-            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
-              <Image
-                src="/images/case-studies/mahbub-ad.png"
-                alt="placeholder"
-                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
-                width={300}
-                height={300}
-              />
-              <div className="flex h-full flex-col justify-between gap-10">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Restoran Mahbub (Online Delivery)</h3>
-                  <p className="text-muted-foreground">
-                    Increase the number of qualified leads via paid advertising
-                    while keeping the cost per lead (CPL) at a sustainable
-                    level.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-10 self-center lg:flex-col">
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  RM2.6M+
-                </p>
-                <p className="text-muted-foreground">Online Revenue</p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  72%
-                </p>
-                <p className="text-muted-foreground">Across all projects</p>
-              </div>
-            </div>
-          </div>
-          <Separator className="my-20" />
-          <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
-            <div className="border-border flex flex-col gap-10 sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
-              <Image
-                src="/images/case-studies/tpl-ad.png"
-                alt="placeholder"
-                className="aspect-square h-full w-full sm:max-w-60 rounded-2xl object-cover"
-                width={300}
-                height={300}
-              />
-              <div className="flex h-full flex-col justify-between gap-10">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">TPL Fresh Meats</h3>
-                  <p className="text-muted-foreground">
-                    Ran ads on Meta and Google using their own social media
-                    content. Generated an additional RM172k in revenue at a +20
-                    ROAS.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-10 self-center lg:flex-col">
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  RM172K+
-                </p>
-                <p className="text-muted-foreground">Meta Sales</p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-primary text-4xl font-medium sm:text-5xl">
-                  20x
-                </p>
-                <p className="text-muted-foreground">Return on Ad Spend</p>
-              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                Nova Healthcare Rebrand
+              </h3>
+              <p className="text-muted-foreground mb-4 flex-grow leading-relaxed">
+                Modernized the visual identity and digital presence of a
+                healthcare provider, resulting in a 25% increase in online
+                appointment bookings.
+              </p>
+              <Link
+                href="#"
+                className="inline-flex items-center text-primary font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors mt-auto"
+              >
+                View Case Study{" "}
+                <ArrowRight className="w-[18px] h-[18px] ml-1" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-muted/50">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Ready to be our next success story?
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Let's discuss your goals and see how we can help you achieve
-              similar results. Book a free discovery call to get started.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg">
-                <Link href="/contact">Book a discovery call</Link>
-              </Button>
-              <Button variant="outline" asChild size="lg">
-                <Link href="/services">View our services</Link>
-              </Button>
-            </div>
+      <section className="py-24 px-4 bg-slate-50 dark:bg-slate-900/50 border-t border-border">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            Have a project in mind?
+          </h2>
+          <p className="text-muted-foreground mb-10 text-lg font-light leading-relaxed max-w-2xl mx-auto">
+            We're always looking for new challenges and opportunities to help
+            businesses grow. Let's discuss how we can work together.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              href="/contact"
+              className="bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md transition-all shadow-sm hover:shadow-md flex justify-center items-center gap-2"
+            >
+              Start a Project
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-white dark:bg-slate-800 border border-border text-foreground hover:bg-gray-50 dark:hover:bg-slate-700 font-semibold py-3 px-8 rounded-md transition-all flex justify-center items-center gap-2"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>
