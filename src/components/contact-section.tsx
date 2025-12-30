@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -17,37 +17,26 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { ContactFormSchema } from "@/lib/schema";
+import { sendEmail } from "@/app/_actions";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  website: z.string().url({
-    message: "Please enter a valid URL (e.g., https://example.com).",
-  }),
-  requirements: z.string().min(10, {
-    message: "Please describe your requirements in at least 10 characters.",
-  }),
-});
+export type ContactFormInputs = z.infer<typeof ContactFormSchema>;
 
 export function ContactSection({ className }: { className?: string }) {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      website: "",
-      requirements: "",
-    },
+  const form = useForm<ContactFormInputs>({
+    resolver: zodResolver(ContactFormSchema),
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Handle form submission here
-  }
+  const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
+    const result = await sendEmail(data);
+
+    if (result?.success) {
+      console.log({ data: result.data });
+      return;
+    }
+
+    console.error(result?.error);
+  };
 
   return (
     <div className={cn("py-24", className)}>
@@ -64,7 +53,7 @@ export function ContactSection({ className }: { className?: string }) {
                 schedule a call.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-2">
               <div className="flex items-center gap-3">
                 <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
                   <Check className="w-4 h-4 font-bold" strokeWidth={3} />
@@ -103,13 +92,12 @@ export function ContactSection({ className }: { className?: string }) {
                     control={form.control}
                     name="name"
                     render={({ field }) => (
-                      <FormItem className="space-y-4">
+                      <FormItem className="space-y-2">
                         <FormLabel className="text-gray-700 dark:text-gray-300">
                           Name
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder=""
                             {...field}
                             className="w-full px-4 py-3 h-auto rounded-md bg-white dark:bg-[#111827] border-gray-200 dark:border-gray-600 focus-visible:ring-0 focus-visible:border-blue-500 text-gray-900 dark:text-white placeholder-gray-400"
                           />
@@ -123,13 +111,12 @@ export function ContactSection({ className }: { className?: string }) {
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem className="space-y-4">
+                      <FormItem className="space-y-2">
                         <FormLabel className="text-gray-700 dark:text-gray-300">
                           Email
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder=""
                             {...field}
                             className="w-full px-4 py-3 h-auto rounded-md bg-white dark:bg-[#111827] border-gray-200 dark:border-gray-600 focus-visible:ring-0 focus-visible:border-blue-500 text-gray-900 dark:text-white placeholder-gray-400"
                           />
@@ -143,13 +130,12 @@ export function ContactSection({ className }: { className?: string }) {
                     control={form.control}
                     name="website"
                     render={({ field }) => (
-                      <FormItem className="space-y-4">
+                      <FormItem className="space-y-2">
                         <FormLabel className="text-gray-700 dark:text-gray-300">
                           Website URL
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder=""
                             {...field}
                             className="w-full px-4 py-3 h-auto rounded-md bg-white dark:bg-[#111827] border-gray-200 dark:border-gray-600 focus-visible:ring-0 focus-visible:border-blue-500 text-gray-900 dark:text-white placeholder-gray-400"
                           />
@@ -161,9 +147,9 @@ export function ContactSection({ className }: { className?: string }) {
 
                   <FormField
                     control={form.control}
-                    name="requirements"
+                    name="message"
                     render={({ field }) => (
-                      <FormItem className="space-y-4">
+                      <FormItem className="space-y-2">
                         <FormLabel className="text-gray-700 dark:text-gray-300">
                           How can we help?
                         </FormLabel>
