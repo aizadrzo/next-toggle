@@ -124,9 +124,12 @@ export default function HeroSection() {
                         <span>Get Started</span>
                       </Link>
                     </Button>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 justify-center">
                       <AvatarCircles
                         avatarUrls={[
+                          {
+                            imageUrl: "/images/team/ar-profile.png",
+                          },
                           {
                             imageUrl: "/images/team/jp-profile.png",
                           },

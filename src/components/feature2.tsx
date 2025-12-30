@@ -17,7 +17,7 @@ const Feature2 = ({ className }: { className?: string }) => {
             height={500}
           />
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h2 className="my-6 mt-0 text-4xl font-semibold text-balance lg:text-5xl">
+            <h2 className="my-6 mt-0 text-balance text-3xl font-semibold md:text-4xl">
               Built by Operators, Not Outsourcers.
             </h2>
             <p className="mb-8 max-w-xl text-muted-foreground lg:text-lg text-left">
