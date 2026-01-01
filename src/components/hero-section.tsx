@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AvatarCircles } from "./ui/avatar-circles";
+import LogoCloud from "./logo-cloud-one";
 
 const menuItems = [
   { name: "Our Work", href: "#our-work" },
@@ -161,13 +162,12 @@ export default function HeroSection() {
                       </div>
                     </div>
                   </div>
-
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
-                      <span className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-700 dark:text-gray-300 text-left">
                         We track Contribution Margin, not just ROAS.
                       </span>
                     </div>
@@ -175,7 +175,7 @@ export default function HeroSection() {
                       <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
-                      <span className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-700 dark:text-gray-300 text-left">
                         Creative, Media, and Retention under one roof.
                       </span>
                     </div>
@@ -183,7 +183,7 @@ export default function HeroSection() {
                       <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
-                      <span className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-700 dark:text-gray-300 text-left">
                         Direct access to directors, no junior managers.
                       </span>
                     </div>
