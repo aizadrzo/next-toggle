@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const menuItems = [
-  { name: "Our Work", href: "/work" },
+  { name: "Our Work", href: "/#work" },
   { name: "About", href: "/#about" },
   { name: "Services", href: "/#services" },
 ];

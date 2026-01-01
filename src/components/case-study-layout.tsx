@@ -18,11 +18,11 @@ export function CaseStudyLayout({ study, children }: CaseStudyLayoutProps) {
         <article className="mx-auto max-w-3xl w-full">
           <div className="mb-8">
             <Link
-              href="/work"
+              href="/#work"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors"
             >
               <MoveLeft className="w-4 h-4" />
-              Back to Work
+              Back to Home
             </Link>
             <div className="aspect-video w-full relative overflow-hidden rounded-lg border bg-muted">
               <Image
@@ -102,7 +102,7 @@ export function CaseStudyLayout({ study, children }: CaseStudyLayoutProps) {
 
             <div className="mt-4 px-6 w-full">
               <Button className="w-full" asChild>
-                <Link href="/contact">Start a Project</Link>
+                <Link href="/#contact">Start a Project</Link>
               </Button>
             </div>
           </div>
