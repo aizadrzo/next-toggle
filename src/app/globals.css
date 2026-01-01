@@ -49,6 +49,19 @@
     from { height: var(--radix-accordion-content-height); }
     to { height: 0; }
   }
+
+  --animate-marquee-horizontal: marquee-horizontal var(--marquee-duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--marquee-duration) linear infinite;
+
+  @keyframes marquee-horizontal {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--marquee-gap))); }
+  }
+
+  @keyframes marquee-vertical {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-100% - var(--marquee-gap))); }
+  }
 }
 
 :root {
@@ -156,5 +169,26 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
   }
 }
