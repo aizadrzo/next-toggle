@@ -23,7 +23,7 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
         </div>
         <div className="mt-12">
           <div className="grid gap-10 lg:grid-cols-4 xl:gap-16">
-            <div className="flex flex-col gap-8 border-border sm:flex-row lg:col-span-3 lg:border-r lg:pr-8 xl:pr-12">
+            <div className="flex flex-col gap-10 border-border sm:flex-row lg:col-span-3 lg:border-r lg:pr-8 xl:pr-12">
               <Image
                 src="/images/client-works/kith-and-kin-ads-1.png"
                 alt="kith-and-kin-ads"
@@ -31,13 +31,16 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
                 height={377}
                 className="aspect-square h-full w-full rounded-2xl object-fill sm:max-w-60"
               />
-              <div className="flex h-full flex-col justify-between gap-6">
+              <div className="flex h-full flex-col gap-6 md:gap-0">
+                <h3 className="text-2xl font-semibold mb-0 md:mb-3">
+                  Unlocking New Growth Channels
+                </h3>
                 <p className="text-lg">
                   Kith & Kin faced challenges with inconsistent leads from
                   organic methods. We implemented a scalable paid advertising
                   strategy to generate high-quality leads.
                 </p>
-                <div className="flex flex-col">
+                <div className="flex flex-col mt-auto">
                   <Image
                     src="/images/client-logos/kith-kin-logo.png"
                     alt="logo"
@@ -81,13 +84,16 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
                 height={377}
                 className="aspect-square h-full w-full rounded-2xl object-fill sm:max-w-60"
               />
-              <div className="flex h-full flex-col justify-between gap-10">
+              <div className="flex h-full flex-col gap-6 md:gap-0">
+                <h3 className="text-2xl font-semibold mb-0 md:mb-3">
+                  From Moonshot to Milestone
+                </h3>
                 <p className="text-lg">
                   UNITAR needed to scale student acquisition in a competitive
                   market. We helped them increase lead volume while
                   significantly reducing Cost Per Lead (CPL).
                 </p>
-                <div className="flex flex-col">
+                <div className="flex flex-col mt-auto">
                   <Image
                     src="/images/client-logos/unitar-logo.png"
                     alt="logo"
@@ -107,9 +113,9 @@ const CaseStudies2 = ({ className }: CaseStudies2Props) => {
                 <p className="text-muted-foreground">Qualified student leads</p>
               </div>
               <div className="flex flex-col">
-                <p className="text-4xl font-semibold sm:text-5xl mb-2">-47%</p>
-                <p className="font-semibold">CPL Reduction</p>
-                <p className="text-muted-foreground">Year-on-year efficiency</p>
+                <p className="text-4xl font-semibold sm:text-5xl mb-2">77%</p>
+                <p className="font-semibold">Total Impressions</p>
+                <p className="text-muted-foreground">Across Malaysia</p>
               </div>
             </div>
             <div className="block sm:hidden">
