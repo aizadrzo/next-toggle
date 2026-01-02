@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Check, Star } from "lucide-react";
+import { Check,Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { AvatarCircles } from "./ui/avatar-circles";
@@ -13,16 +13,15 @@ export default function HeroSection() {
           <div className="relative mx-auto max-w-6xl px-6 py-28 lg:py-20">
             <div className="lg:flex lg:items-center lg:gap-12">
               <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
-                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">
-                  The All-In-One Growth Engine for Modern Brands
+                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl capitalize">
+                  Unified growth across paid, creative and web from one senior team
                 </h1>
                 <p className="mt-8">
-                  We synchronize Performance Marketing, Creative Strategy, and
-                  Retention Systems to drive profitable growth.
+                  Toggle helps Ecommerce, Lifestyle, Education, Real Estate, and F&B brands acquire and retain customers with full-funnel execution.
                 </p>
 
                 <div>
-                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col md:flex-row gap-4 items-center`">
+                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col gap-4  sm:items-center sm:items-start">
                     <Button asChild size="lg">
                       <Link
                         href="#contact"
@@ -34,7 +33,7 @@ export default function HeroSection() {
                           }
                         }}
                       >
-                        <span>Get Started</span>
+                        <span>Get a Free Brand Audit</span>
                       </Link>
                     </Button>
                     <div className="flex items-center gap-2 justify-center">
@@ -68,13 +67,13 @@ export default function HeroSection() {
                           <Star className="w-5 h-5 fill-current" />
                           <Star className="w-5 h-5 fill-current" />
                         </div>
-                        <p className="text-gray-700 dark:text-gray-300 text-sm">
-                          Get a free brand audit
+                        <p className="text-gray-700 dark:text-gray-300 text-sm text-left">
+                          Rated 5/5 by over 50+ clients
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="space-y-4">
+                                    <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
