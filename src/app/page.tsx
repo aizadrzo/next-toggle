@@ -3,6 +3,8 @@ import IntegrationsThree from "@/components/services";
 import { Feature2 } from "@/components/feature2";
 import HeroSection from "@/components/hero-section";
 import { ContactSection } from "@/components/contact-section";
+import SanityTest from "./SanityTest/page";
+
 
 export default function Home() {
   return (
