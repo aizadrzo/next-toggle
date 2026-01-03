@@ -19,6 +19,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactFormSchema } from "@/lib/schema";
 import { sendEmail } from "@/app/_actions";
+import { AvatarCircles } from "./ui/avatar-circles";
+import { Star } from "lucide-react";
 
 export type ContactFormInputs = z.infer<typeof ContactFormSchema>;
 
@@ -45,6 +47,41 @@ export function ContactSection({ className }: { className?: string }) {
           {/* Left Column */}
           <div className="lg:col-span-5 space-y-10 pt-4">
             <div className="text-center sm:text-left space-y-4">
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <AvatarCircles
+                  avatarUrls={[
+                    {
+                      imageUrl: "/images/client-avatar/tpl.png",
+                    },
+                    {
+                      imageUrl: "/images/client-avatar/supermama.png",
+                    },
+                    {
+                      imageUrl: "/images/client-avatar/kualesa.png",
+                    },
+                    {
+                      imageUrl: "/images/client-avatar/unitar.png",
+                    },
+                    {
+                      imageUrl: "/images/client-avatar/leica.png",
+                    },
+                  ]}
+                  size={8}
+                  className="flex-shrink-0"
+                />
+                <div className="flex flex-col">
+                  <div className="flex text-yellow-500 mb-1 gap-0.5">
+                    <Star className="w-3 h-3 fill-current" />
+                    <Star className="w-3 h-3 fill-current" />
+                    <Star className="w-3 h-3 fill-current" />
+                    <Star className="w-3 h-3 fill-current" />
+                    <Star className="w-3 h-3 fill-current" />
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300 text-xs text-left">
+                    Rated 5/5 by over 50+ clients
+                  </p>
+                </div>
+              </div>
               <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white leading-tight">
                 Talk to our Growth Specialist
               </h1>
@@ -83,7 +120,7 @@ export function ContactSection({ className }: { className?: string }) {
           </div>
           {/* Right Column */}
           <div className="lg:col-span-7 pl-0 lg:pl-10">
-            <div className="bg-white dark:bg-[#1f2937] p-8 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+            <div className="bg-background dark:bg-[#1f2937] p-8 rounded-2xl border border-border">
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}

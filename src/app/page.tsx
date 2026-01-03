@@ -1,5 +1,4 @@
 import IntegrationsThree from "@/components/services";
-import { Feature2 } from "@/components/feature2";
 import { Feature3 } from "@/components/feature3";
 import HeroSection from "@/components/hero-section";
 import { ContactSection } from "@/components/contact-section";

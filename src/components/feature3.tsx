@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { AnimatedBeamDemo } from "./marketing-tools";
 
 export function Feature3({ className }: { className?: string }) {
   return (
@@ -30,11 +31,11 @@ export function Feature3({ className }: { className?: string }) {
         <div className="flex-row-reverse lg:flex lg:gap-x-4">
           <div className="lg:w-1/2">
             <div className="mb-6 md:mb-8 lg:mb-0">
-              <img
-                alt="placeholder hero"
-                className="aspect-4/3 w-full rounded-md border border-border object-cover"
-                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-              />
+              <div className="aspect-4/3 w-full rounded-md border border-border h-full">
+                <div className="flex items-center justify-center">
+                  <AnimatedBeamDemo />
+                </div>
+              </div>
             </div>
           </div>
           <div className="lg:flex lg:w-1/2 lg:items-center lg:pr-24 2xl:pr-32">
