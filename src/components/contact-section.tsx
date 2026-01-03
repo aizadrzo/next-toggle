@@ -54,7 +54,7 @@ export function ContactSection({ className }: { className?: string }) {
                 marketing, then share what we would improve first
               </p>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
                   <Check className="w-4 h-4 font-bold" strokeWidth={3} />

@@ -22,7 +22,7 @@ export default function HeroSection() {
                   priorities clear and measurable.
                 </p>
                 <div>
-                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col gap-4  sm:items-start">
+                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col sm:flex-row gap-4 sm:items-start">
                     <Button asChild size="lg">
                       <Link
                         href="#contact"
@@ -34,7 +34,10 @@ export default function HeroSection() {
                           }
                         }}
                       >
-                        <span>Get Started</span>
+                        <span className="sm:block hidden">Get Started</span>
+                        <span className="sm:hidden block">
+                          Get a Free Brand Audit
+                        </span>
                       </Link>
                     </Button>
                     <div className="flex items-center gap-2 justify-center">
