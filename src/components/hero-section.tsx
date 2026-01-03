@@ -41,24 +41,22 @@ export default function HeroSection() {
                       <AvatarCircles
                         avatarUrls={[
                           {
-                            imageUrl: "/images/team/ar-profile.png",
+                            imageUrl: "/images/client-avatar/tpl.png",
                           },
                           {
-                            imageUrl: "/images/team/jp-profile.png",
+                            imageUrl: "/images/client-avatar/supermama.png",
                           },
                           {
-                            imageUrl: "/images/team/sb-profile.png",
+                            imageUrl: "/images/client-avatar/kualesa.png",
                           },
                           {
-                            imageUrl: "/images/team/vs-profile.png",
+                            imageUrl: "/images/client-avatar/unitar.png",
                           },
                           {
-                            imageUrl: "/images/team/zs-profile.png",
-                          },
-                          {
-                            imageUrl: "/images/team/yy-profile.png",
+                            imageUrl: "/images/client-avatar/leica.png",
                           },
                         ]}
+                        numPeople={50}
                       />
                       <div className="flex flex-col">
                         <div className="flex text-yellow-500 mb-1 gap-0.5">
