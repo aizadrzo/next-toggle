@@ -46,11 +46,12 @@ export function ContactSection({ className }: { className?: string }) {
           <div className="lg:col-span-5 space-y-10 pt-4">
             <div className="text-center sm:text-left space-y-4">
               <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white leading-tight">
-                Connect with our Marketing Expert
+                Talk to our Growth Specialist
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                Please fill the form and we will connect you within 24 hours to
-                schedule a call.
+                Submit the form and we will contact you within 24 hours to
+                schedule a quick call. We will review your website and
+                marketing, then share what we would improve first
               </p>
             </div>
             <div className="space-y-2">
@@ -59,7 +60,7 @@ export function ContactSection({ className }: { className?: string }) {
                   <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                 </div>
                 <span className="text-gray-700 dark:text-gray-300">
-                  Free No Obligation Consultation Call
+                  Free brand audit and recommendations
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -67,7 +68,7 @@ export function ContactSection({ className }: { className?: string }) {
                   <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                 </div>
                 <span className="text-gray-700 dark:text-gray-300">
-                  No Sales Pitches & No Pressure
+                  No sales pitches, no pressure
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -75,7 +76,7 @@ export function ContactSection({ className }: { className?: string }) {
                   <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                 </div>
                 <span className="text-gray-700 dark:text-gray-300">
-                  Simple Pricing
+                  Clear plan and priorities after the call
                 </span>
               </div>
             </div>

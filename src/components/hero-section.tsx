@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Check,Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { AvatarCircles } from "./ui/avatar-circles";
@@ -14,14 +14,15 @@ export default function HeroSection() {
             <div className="lg:flex lg:items-center lg:gap-12">
               <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
                 <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl capitalize">
-                  Unified growth across paid, creative and web from one senior team
+                  Scale Your Brand with a Growth Partner You Can Rely On
                 </h1>
                 <p className="mt-8">
-                  Toggle helps Ecommerce, Lifestyle, Education, Real Estate, and F&B brands acquire and retain customers with full-funnel execution.
+                  We combine digital strategy, creative, acquisition, retention,
+                  and analytics to help brands grow sustainably, while keeping
+                  priorities clear and measurable.
                 </p>
-
                 <div>
-                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col gap-4  sm:items-center sm:items-start">
+                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col gap-4  sm:items-start">
                     <Button asChild size="lg">
                       <Link
                         href="#contact"
@@ -33,7 +34,7 @@ export default function HeroSection() {
                           }
                         }}
                       >
-                        <span>Get a Free Brand Audit</span>
+                        <span>Get Started</span>
                       </Link>
                     </Button>
                     <div className="flex items-center gap-2 justify-center">
@@ -73,13 +74,14 @@ export default function HeroSection() {
                       </div>
                     </div>
                   </div>
-                                    <div className="space-y-4">
+                  <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-md border border-blue-500/30 flex items-center justify-center bg-blue-500/5 text-blue-500">
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300 text-left">
-                        We track Contribution Margin, not just ROAS.
+                        Full-stack digital marketing built for sustainable
+                        growth
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -87,7 +89,7 @@ export default function HeroSection() {
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300 text-left">
-                        Creative, Media, and Retention under one roof.
+                        A structured approach that reduces guesswork
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -95,7 +97,7 @@ export default function HeroSection() {
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300 text-left">
-                        Direct access to directors, no junior managers.
+                        Transparent reporting that supports better decisions
                       </span>
                     </div>
                   </div>

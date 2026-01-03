@@ -26,42 +26,42 @@ export default function Integrations({ className }: { className?: string }) {
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             <ServicesCard
               title="Performance Marketing"
-              description="Maximize your ROI with expert media buying and data-driven campaigns."
+              description="Drive growth with campaign optimization and performance creative, using audience and conversion data to guide what we produce and scale."
             >
               <Target className="text-white w-6 h-6" />
             </ServicesCard>
 
             <ServicesCard
-              title="Email Digital Marketing"
-              description="Boost engagement and retention with personalized CRM solutions."
+              title="Email Marketing"
+              description="Set up automated journeys, newsletters, and segmentation that grow LTV and reduce churn over time."
             >
               <Mail className="text-white w-6 h-6" />
             </ServicesCard>
 
             <ServicesCard
               title="Branding"
-              description="Create a powerful brand presence with custom strategies that resonate with your audience."
+              description="Define your message and visual direction, then apply it consistently so your brand stands out in competitive markets."
             >
               <Paintbrush className="text-white w-6 h-6" />
             </ServicesCard>
 
             <ServicesCard
               title="Content Marketing"
-              description="Elevate your brand with compelling content and innovative design."
+              description="Create a content system that builds awareness, drives qualified traffic, and supports conversion across channels."
             >
               <Images className="text-white w-6 h-6" />
             </ServicesCard>
 
             <ServicesCard
               title="Web Development"
-              description="Captivate and convert visitors with sleek, user-friendly websites."
+              description="Design and develop high-performing websites and landing pages built for speed, clarity, and conversions."
             >
               <Terminal className="text-white w-6 h-6" />
             </ServicesCard>
 
             <ServicesCard
               title="Reporting & Analysis"
-              description="Transform complex data into actionable insights for continuous improvement."
+              description="Build a reporting cadence that tracks what matters and highlights what to improve next, not just what happened."
             >
               <ChartNoAxesCombined className="text-white w-6 h-6" />
             </ServicesCard>
