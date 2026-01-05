@@ -84,7 +84,7 @@ const ServicesCard = ({
   link?: string;
 }) => {
   return (
-    <Card className="p-6 border-none bg-zinc-50">
+    <Card className="p-6 bg-zinc-50 border border-border">
       <div className="relative">
         <div className="*:size-10">
           <div className="bg-zinc-900 rounded-lg flex items-center justify-center">

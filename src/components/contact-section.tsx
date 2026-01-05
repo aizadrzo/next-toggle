@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
+import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
@@ -27,16 +28,24 @@ export type ContactFormInputs = z.infer<typeof ContactFormSchema>;
 export function ContactSection({ className }: { className?: string }) {
   const form = useForm<ContactFormInputs>({
     resolver: zodResolver(ContactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      website: "",
+      message: "",
+    },
   });
 
   const onSubmit: SubmitHandler<ContactFormInputs> = async (data) => {
     const result = await sendEmail(data);
 
     if (result?.success) {
-      console.log({ data: result.data });
+      toast.success("Message sent successfully!");
+      form.reset();
       return;
     }
 
+    toast.error("Something went wrong. Please try again.");
     console.error(result?.error);
   };
 
