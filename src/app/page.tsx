@@ -1,5 +1,5 @@
 import IntegrationsThree from "@/components/services";
-import { Feature2 } from "@/components/feature2";
+import { Feature3 } from "@/components/feature3";
 import HeroSection from "@/components/hero-section";
 import { ContactSection } from "@/components/contact-section";
 import { Gallery6 } from "@/components/gallery6";
@@ -12,7 +12,7 @@ export default function Home() {
       <LogoCloud />
       <div className="mx-auto max-w-6xl gap-32 flex flex-col pt-16 sm:pt-0">
         <section id="about">
-          <Feature2 className="py-0" />
+          <Feature3 className="pt-24" />
         </section>
         <section id="work">
           <Gallery6 className="py-0" />

@@ -13,16 +13,16 @@ export default function HeroSection() {
           <div className="relative mx-auto max-w-6xl px-6 py-28 lg:py-20">
             <div className="lg:flex lg:items-center lg:gap-12">
               <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
-                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">
-                  The All-In-One Growth Engine for Modern Brands
+                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl capitalize">
+                  Scale Your Brand with a Growth Partner You Can Rely On
                 </h1>
                 <p className="mt-8">
-                  We synchronize Performance Marketing, Creative Strategy, and
-                  Retention Systems to drive profitable growth.
+                  We combine digital strategy, creative, acquisition, retention,
+                  and analytics to help brands grow sustainably, while keeping
+                  priorities clear and measurable.
                 </p>
-
                 <div>
-                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col md:flex-row gap-4 items-center`">
+                  <div className="mx-auto my-10 lg:my-12 lg:ml-0 lg:mr-auto flex flex-col sm:flex-row gap-4 sm:items-start">
                     <Button asChild size="lg">
                       <Link
                         href="#contact"
@@ -34,31 +34,32 @@ export default function HeroSection() {
                           }
                         }}
                       >
-                        <span>Get Started</span>
+                        <span className="sm:block hidden">Get Started</span>
+                        <span className="sm:hidden block">
+                          Get a Free Brand Audit
+                        </span>
                       </Link>
                     </Button>
                     <div className="flex items-center gap-2 justify-center">
                       <AvatarCircles
                         avatarUrls={[
                           {
-                            imageUrl: "/images/team/ar-profile.png",
+                            imageUrl: "/images/client-avatar/tpl.png",
                           },
                           {
-                            imageUrl: "/images/team/jp-profile.png",
+                            imageUrl: "/images/client-avatar/supermama.png",
                           },
                           {
-                            imageUrl: "/images/team/sb-profile.png",
+                            imageUrl: "/images/client-avatar/kualesa.png",
                           },
                           {
-                            imageUrl: "/images/team/vs-profile.png",
+                            imageUrl: "/images/client-avatar/unitar.png",
                           },
                           {
-                            imageUrl: "/images/team/zs-profile.png",
-                          },
-                          {
-                            imageUrl: "/images/team/yy-profile.png",
+                            imageUrl: "/images/client-avatar/leica.png",
                           },
                         ]}
+                        numPeople={50}
                       />
                       <div className="flex flex-col">
                         <div className="flex text-yellow-500 mb-1 gap-0.5">
@@ -68,8 +69,8 @@ export default function HeroSection() {
                           <Star className="w-5 h-5 fill-current" />
                           <Star className="w-5 h-5 fill-current" />
                         </div>
-                        <p className="text-gray-700 dark:text-gray-300 text-sm">
-                          Get a free brand audit
+                        <p className="text-gray-700 dark:text-gray-300 text-sm text-left">
+                          Rated 5/5 by over 50+ clients
                         </p>
                       </div>
                     </div>
@@ -80,7 +81,8 @@ export default function HeroSection() {
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300 text-left">
-                        We track Contribution Margin, not just ROAS.
+                        Full-stack digital marketing built for sustainable
+                        growth
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -88,7 +90,7 @@ export default function HeroSection() {
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300 text-left">
-                        Creative, Media, and Retention under one roof.
+                        A structured approach that reduces guesswork
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -96,7 +98,7 @@ export default function HeroSection() {
                         <Check className="w-4 h-4 font-bold" strokeWidth={3} />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300 text-left">
-                        Direct access to directors, no junior managers.
+                        Transparent reporting that supports better decisions
                       </span>
                     </div>
                   </div>
